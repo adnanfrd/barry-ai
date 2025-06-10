@@ -21,15 +21,15 @@ import { FiGrid, FiUsers  } from 'react-icons/fi';
 import { HiOutlineAdjustments } from 'react-icons/hi'; // or:
 
 const navItems = [
-  { name: "Profile", href: "/dashboard/chats/profile", icon: CgProfile },
+  { name: "Profile", href: "/dashboard/settings", icon: CgProfile },
   {
     name: "Password",
-    href: "/dashboard/updatesfaq/password",
+    href: "/dashboard/settings/password",
     icon: IoKeyOutline,
   },
   {
     name: "Notifications",
-    href: "/dashboard/subscriptions/notifications",
+    href: "/dashboard/settings/notifications",
     icon: IoIosNotificationsOutline,
   },
   { name: "Chat export", 
