@@ -9,7 +9,7 @@ const teamMembers = [
     email: 'albert.baker@example.com',
     role: 'Dog Trainer',
     status: 'Last seen 3h ago',
-    avatar: '/avatars/1.png',
+    avatar: '/photo.png',
     online: false,
   },
   {
@@ -17,7 +17,7 @@ const teamMembers = [
     email: 'felicia.reid@example.com',
     role: 'Marketing Coordinator',
     status: 'Online',
-    avatar: '/avatars/2.png',
+    avatar: '/photo.png',
     online: true,
   },
   {
@@ -25,7 +25,7 @@ const teamMembers = [
     email: 'michael.mitc@example.com',
     role: 'Medical Assistant',
     status: 'Online',
-    avatar: '/avatars/3.png',
+    avatar: '/photo.png',
     online: true,
   },
   {
@@ -33,7 +33,7 @@ const teamMembers = [
     email: 'alma.lawson@example.com',
     role: 'President of Sales',
     status: 'Last seen 3h ago',
-    avatar: '/avatars/4.png',
+    avatar: '/photo.png',
     online: false,
   },
   {
@@ -41,7 +41,7 @@ const teamMembers = [
     email: 'nathan.roberts@example.com',
     role: 'Web Designer',
     status: 'Online',
-    avatar: '/avatars/5.png',
+    avatar: '/photo.png',
     online: true,
   },
   {
@@ -49,7 +49,7 @@ const teamMembers = [
     email: 'bill.candia@example.com',
     role: 'Nursing Assistant',
     status: 'Online',
-    avatar: '/avatars/6.png',
+    avatar: '/photo.png',
     online: true,
   },
 ];
