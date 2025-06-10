@@ -1,8 +1,11 @@
+import ProfilePage from '@/components/dashboard/profile/ProfilePage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>profile page here....</div>
+    <div>
+      <ProfilePage/>
+    </div>
   )
 }
 
