@@ -11,7 +11,7 @@ export default function ProfilePage() {
   const [bio, setBio] = useState("Placeholder");
 
   return (
-    <div className="p-2 sm:p-6 max-w-4xl mx-auto w-full">
+    <div className="p-2 sm:p-4 max-w-4xl mx-auto w-full">
       <h1 className="text-2xl font-bold mb-4">Profile</h1>
       <hr className="mb-6 text-gray-200" /> 
       <div className="bg-white shadow-md rounded-2xl p-6 sm:p-8 space-y-6 ">

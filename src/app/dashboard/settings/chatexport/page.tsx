@@ -1,8 +1,11 @@
+import ExportPage from '@/components/dashboard/profile/ExportPage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>chat export</div>
+    <div>
+      <ExportPage/>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
+import SessionsPage from '@/components/dashboard/profile/SessionsPage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>sessions page </div>
+    <div>
+      <SessionsPage/>
+    </div>
   )
 }
 
