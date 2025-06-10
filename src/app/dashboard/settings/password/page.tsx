@@ -1,8 +1,11 @@
+import PasswordPage from '@/components/dashboard/profile/PasswordPage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>password page</div>
+    <div>
+      <PasswordPage/>
+    </div>
   )
 }
 
