@@ -64,16 +64,16 @@ const  handleClick = () =>{
   
 }
   return (
-    <aside className="w-64 shrink-0 bg-white border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
+    <aside className="w-64 rounded-xl shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
       <div>
         <nav className="mb-6 space-y-1">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all hover:bg-gray-300 hover:text-gray-800 ${
+              className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all hover:bg-gray-300 hover:text-gray-600 ${
                 pathname === item.href
-                  ? "bg-purple-100 text-gray-900 font-bold"
+                  ? "bg-[#e8e5ec] text-gray-900 font-bold"
                   : "text-gray-700 "
               }`}
             >

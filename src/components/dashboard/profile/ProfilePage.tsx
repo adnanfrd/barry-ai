@@ -2,80 +2,81 @@
 
 import { useState } from "react";
 import { FaRegFileAlt } from "react-icons/fa";
-import Image from "next/image";
 import { CiUser, CiLocationOn } from "react-icons/ci";
+import Image from "next/image";
 
 export default function ProfilePage() {
-  const [name, setName] = useState("@gpk.crtv");
-  const [location, setLocation] = useState("@gpk.crtv");
+  const [name, setName] = useState("@xpk.crtv");
+  const [location, setLocation] = useState("@xpk.crtv");
   const [bio, setBio] = useState("Placeholder");
 
   return (
-    <div className="p-2 sm:p-4 max-w-4xl mx-auto w-full">
-      <h1 className="text-2xl font-bold mb-4">Profile</h1>
-      <hr className="mb-6 text-gray-200" /> 
-      <div className="bg-white shadow-md rounded-2xl p-6 sm:p-8 space-y-6 ">
-        {/* Avatar */}
-        <div className="flex items-center space-x-4">
+    <div className="max-w-3xl mx-auto p-4">
+      <h1 className="text-2xl font-bold text-black mb-2">Profile</h1>
+      <hr className="border-gray-200 mb-6" />
+
+      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-md space-y-6">
+        {/* Avatar Upload Section */}
+        <div className="flex items-start gap-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden">
             <Image
-              src="/photo.png" // Replace with actual avatar path or state
-              alt="User Avatar"
+              src="/photo.png"
+              alt="User avatar"
               fill
               className="object-cover"
             />
           </div>
           <div>
-            <button className="px-4 py-2 text-sm focus:outline-none hover:border-purple-500 font-medium border border-gray-300 rounded-md hover:bg-gray-50">
+            <button className="bg-white border border-gray-300 text-gray-800 hover:bg-gray-50 px-4 py-1.5 rounded-md text-sm font-medium">
               Upload new image
             </button>
             <p className="text-xs text-gray-500 mt-1">
-              At least 800×800 px recommended. JPG, PNG, or GIF allowed.
+              At least 800×800 px recommended. JPG or PNG and GIF is allowed
             </p>
           </div>
         </div>
 
-        {/* Name Input */}
+        {/* Name Field */}
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Name
           </label>
           <div className="relative">
-            <CiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" />
+            <CiUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 focus:outline-none border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
             />
           </div>
         </div>
 
-        {/* Location Input (with dropdown style) */}
+        {/* Location Dropdown */}
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Location
           </label>
           <div className="relative">
-            <CiLocationOn className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" />
+            <CiLocationOn className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
             <select
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="w-full cursor-pointer pl-10 pr-4 py-2 focus:outline-none border border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
             >
-              <option value="@gpk.crtv">@gpk.crtv</option>
+              <option value="@xpk.crtv">@xpk.crtv</option>
               <option value="@openai">@openai</option>
               <option value="@nextjs">@nextjs</option>
-              <option value="@nextjs">@reactjs</option>
-              <option value="@nextjs">@nodejs</option>
-              <option value="@nextjs">@amberjs</option>
+              <option value="@reactjs">@reactjs</option>
+              <option value="@nodejs">@nodejs</option>
+              <option value="@amberjs">@amberjs</option>
             </select>
           </div>
         </div>
 
-        {/* Bio Input */}
+        {/* Bio Field */}
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">
+          <label className="block text-sm font-medium text-black mb-1">
             Bio
           </label>
           <div className="relative">
@@ -84,7 +85,7 @@ export default function ProfilePage() {
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               rows={3}
-              className="w-full pl-10 pr-4 py-2 border focus:outline-none border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500 resize-none"
+              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none"
             />
           </div>
         </div>
@@ -93,7 +94,7 @@ export default function ProfilePage() {
         <div>
           <button
             onClick={() => alert("Updated!")}
-            className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-white px-5 py-2 rounded-lg text-sm font-medium"
+            className="bg-purple-600 text-white hover:bg-purple-700 px-6 py-2 rounded-md text-sm font-semibold"
           >
             Update
           </button>
