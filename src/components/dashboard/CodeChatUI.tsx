@@ -74,14 +74,12 @@ export default function CodeChatUI() {
         </pre>
       </div>
 
-      {/* Description */}
       <p className="text-sm text-gray-600">
         Vertical inspect effect library flatten strikethrough list export
         overflow outline. Figjam vertical share background export outline align
         mask edit list. Asset strikethrough layout.
       </p>
 
-      {/* CodePen Footer */}
       <div className="flex justify-between items-center bg-gray-100 rounded-2xl px-4 py-3 text-sm text-gray-700">
         <span>I have created a project in your Codepen account</span>
         <button className="flex items-center gap-2 px-3 py-1 rounded-md border border-gray-300 hover:bg-white">
