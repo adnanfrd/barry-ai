@@ -77,13 +77,12 @@ export default function ChatSidebar() {
         <FaEdit className="text-gray-400 w-4 h-4" />
       </div>
 
-      {/* Chat Messages */}
       <div className="flex flex-col gap-4 overflow-y-auto">
         {messages.map((msg, index) => (
           <div key={index} className="flex flex-col gap-2 rounded-xl">
             {/* Title & Content */}
             <div className="px-1">
-              <p className="text-sm font-semibold text-gray-900 leading-tight">
+              <p className="text-sm font-bold text-gray-900 leading-tight">
                 {msg.title}
               </p>
               <p className="text-sm text-gray-600 leading-snug">{msg.content}</p>
