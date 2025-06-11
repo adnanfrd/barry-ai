@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { AiOutlineAppstore } from 'react-icons/ai';
+import { IoIosClose } from 'react-icons/io';
 
 const applications = [
   {
@@ -12,62 +12,74 @@ const applications = [
   {
     name: 'Guy Hawkins',
     email: 'felicia.reid@example.com',
-    icon: '/behance.png',
+    icon: '/figma.png',
   },
   {
     name: 'Jane Cooper',
     email: 'michael.mitc@example.com',
-    icon: '/behance.png',
+    icon: '/mail.webp',
   },
   {
     name: 'Bessie Cooper',
     email: 'alma.lawson@example.com',
-    icon: '/behance.png',
+    icon: '/ai.png',
   },
-  {
-    name: 'Devon Lane',
-    email: 'nathan.roberts@example.com',
-    icon: '/behance.png',
-  },
-  {
-    name: 'Marvin McKinney',
-    email: 'bill.candia@example.com',
-    icon: '/behance.png',
-  },
+  // {
+  //   name: 'Devon Lane',
+  //   email: 'nathan.roberts@example.com',
+  //   icon: '/behance.png',
+  // },
+  // {
+  //   name: 'Marvin McKinney',
+  //   email: 'bill.candia@example.com',
+  //   icon: '/behance.png',
+  // },
 ];
 
 export default function ApplicationsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="p-2 h-screen bg-white sm:p-4 max-w-4xl mx-auto w-full">
+      <div className="flex p-2 justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Applications</h1>
-        <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+        <button className="bg-purple-600 rounded-xl hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium">
           Add More Apps
         </button>
       </div>
+                    <hr className="mb-6 text-gray-200" />
 
-      <div className="bg-purple-50 border border-purple-100 p-4 rounded-lg flex justify-between items-start mb-6">
-        <div className="flex items-start gap-3">
-          <div className="text-purple-600 mt-1">
-            <AiOutlineAppstore size={24} />
-          </div>
-          <div>
-            <h2 className="font-semibold text-purple-800">Application request</h2>
-            <p className="text-sm text-gray-700">
-              Resetting thumbnail align layout team union scrolling figma ellipse.
-              Editor connection device group team distribute invite library.
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-0 sm:ml-4">
-          <button className="text-sm text-gray-500 hover:underline">Dismiss</button>
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-1.5 rounded-md text-sm font-medium">
-            Accept
-          </button>
-        </div>
-      </div>
 
-      <div className="bg-white rounded-lg shadow-sm divide-y border">
+      <div className="bg-[#f3f1fc] border border-purple-300 rounded-lg px-4 py-4 mb-6 relative">
+                <div className="flex items-start gap-3">
+                  <Image
+                  src='/ai.png'
+                  width={30}
+                  alt='img'
+                  height={30}
+                  />
+                  <div>
+                    <p className="font-semibold text-sm text-purple-800 mb-1">
+                      Application request
+                    </p>
+                    <p className="text-xs text-gray-700 mb-2">
+                      Resetting thumbnail align layout team union scrolling figma ellipse. Editor connection device group team distribute invite library.
+                    </p>
+                    <div className="flex items-center justify-end gap-4 text-sm">
+                      <button className="text-purple-600">
+                        Dismiss
+                      </button>
+                      <button className="bg-purple-600 rounded-xl text-white px-4 py-1.5 rounded-md hover:bg-purple-700">
+                        Accept
+                      </button>
+                    </div>
+                  </div>
+                  <IoIosClose
+                    size={22}
+                    className="absolute right-3 top-3 cursor-pointer text-purple-500"
+                  />
+                </div>
+              </div>
+
+      <div className="bg-white rounded-lg shadow-sm divide-y divide-gray-300 ">
         {applications.map((app, idx) => (
           <div
             key={idx}

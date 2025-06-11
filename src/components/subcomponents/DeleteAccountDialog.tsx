@@ -1,66 +1,21 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useState, Fragment } from "react";
-import Link from "next/link";
-
+import { useState } from "react";
 import { Dialog, DialogPanel, DialogTitle, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 import { FaExclamationCircle, FaKey } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { IoKeyOutline } from "react-icons/io5";
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { LuCloudDownload } from "react-icons/lu";
-import { RiComputerLine } from "react-icons/ri";
-import { FiGrid, FiUsers } from "react-icons/fi";
-import { HiOutlineAdjustments } from "react-icons/hi";
 
-const navItems = [
-  { name: "Profile", href: "/dashboard/settings", icon: CgProfile },
-  { name: "Password", href: "/dashboard/settings/password", icon: IoKeyOutline },
-  { name: "Notifications", href: "/dashboard/settings/notifications", icon: IoIosNotificationsOutline },
-  { name: "Chat export", href: "/dashboard/settings/chatexport", icon: LuCloudDownload },
-  { name: "Sessions", href: "/dashboard/settings/sessions", icon: RiComputerLine },
-  { name: "Applications", href: "/dashboard/settings/applications", icon: FiGrid },
-  { name: "Team", href: "/dashboard/settings/team", icon: FiUsers },
-  { name: "Appearance", href: "/dashboard/settings/appearance", icon: HiOutlineAdjustments },
-];
-
-export default function Profiledashboard() {
-  const pathname = usePathname();
+export default function DeleteAccountDialog() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <aside className="w-64 rounded-l-xl shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
-        <div>
-          <nav className="mb-6 space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all hover:bg-gray-300 hover:text-gray-600 ${
-                  pathname === item.href
-                    ? "bg-[#e8e5ec] text-gray-900 font-bold"
-                    : "text-gray-700"
-                }`}
-              >
-                <item.icon className="h-4 w-4" /> {item.name}
-              </Link>
-            ))}
-            <div className="px-3 text-gray-500 py-4">
-              <hr />
-            </div>
-            <div
-              onClick={() => setIsOpen(true)}
-              className={`flex items-center gap-5 px-3 py-2 rounded-md text-sm text-red-500 cursor-pointer font-medium transition-all hover:bg-purple-50 hover:text-red-600`}
-            >
-              <button className="cursor-pointer">
-                <span className="mr-2">X</span> Delete Account
-              </button>
-            </div>
-          </nav>
-        </div>
-      </aside>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex items-center gap-2 text-sm text-red-500 hover:text-red-600"
+      >
+        <span className="mr-2">X</span> Delete Account
+      </button>
 
       <Transition show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
@@ -81,7 +36,7 @@ export default function Profiledashboard() {
                   </div>
                   <div>
                     <DialogTitle className="text-lg font-semibold text-gray-900">
-                      We are sorry to see you go
+                      We’re sorry to see you go
                     </DialogTitle>
                     <p className="mt-1 text-sm text-gray-600">
                       Warning: Deleting your account will permanently remove all of your data and cannot be undone. This includes your profile, chats, comments, and any other information associated with your account. Are you sure you want to proceed with deleting your account?
@@ -111,7 +66,10 @@ export default function Profiledashboard() {
                     Cancel
                   </button>
                   <button
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      // Add delete logic here
+                    }}
                     className="px-4 py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700"
                   >
                     Delete Account
@@ -120,6 +78,8 @@ export default function Profiledashboard() {
               </DialogPanel>
             </div>
           </Transition.Child>
+
+          <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         </Dialog>
       </Transition>
     </>

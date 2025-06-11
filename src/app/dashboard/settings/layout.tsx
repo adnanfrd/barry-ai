@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className={`${poppins.className} bg-[#f9fafb] text-gray-900`}>
-        <div className="flex min-h-screen w-full">
-          <Profiledashboard/>
-          <main className="flex-1 rounded-r-xl overflow-y-auto w-full">{children}</main>
+         <div className="flex w-full"> 
+          <Profiledashboard />
+          <main className="flex-1 rounded-r-xl w-full">{children}</main> 
         </div>
       </body>
     </html>
