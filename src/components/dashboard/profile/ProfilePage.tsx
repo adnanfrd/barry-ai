@@ -12,9 +12,8 @@ export default function ProfilePage() {
 
   return (
     <div className=" h-screen max-w-4xl bg-white mx-auto">
-      <h1 className="text-2xl p-3 font-bold text-black mb-2">Profile</h1>
-      <hr className="border-gray-200 mb-2 p-3" />
-
+      <h1 className="text-2xl p-6 font-bold text-black mb-2">Profile</h1>
+      <hr className="mb-6 text-gray-200" />
       <div className=" py-6 px-2 sm:p-6 rounded-2xl space-y-6">
         <div className="flex items-start gap-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden">

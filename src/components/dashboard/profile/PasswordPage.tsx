@@ -14,12 +14,11 @@ export default function PasswordPage() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   return (
-    <div className="p-2 sm:p-4 max-w-4xl mx-auto w-full">
-      <h1 className="text-2xl font-bold mb-6">Password</h1>
+    <div className="p-2 h-screen bg-white sm:p-4 max-w-4xl mx-auto w-full">
+      <h1 className="text-2xl px-4 py-2 font-bold mb-6">Password</h1>
             <hr className="mb-6 text-gray-200" /> 
-      <div className="bg-white shadow-md rounded-2xl p-6 sm:p-8 space-y-6 ">
+      <div className=" rounded-2xl p-6 sm:p-4 space-y-6 ">
 
-        {/* Current Password */}
         <div>
           <label className="text-sm font-medium text-gray-700 block mb-1">Current Password</label>
           <div className="relative">
