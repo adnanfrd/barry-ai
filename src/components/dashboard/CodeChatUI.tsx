@@ -1,8 +1,10 @@
 "use client";
 
-import { HiOutlineEyeOff } from "react-icons/hi";
+import { HiOutlineEyeOff, HiOutlineLink } from "react-icons/hi";
 import { FaCodepen } from "react-icons/fa6";
 import Image from "next/image";
+import { LuCopy } from "react-icons/lu";
+import { FiDownloadCloud, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 
 export default function CodeChatUI() {
   return (
@@ -47,45 +49,62 @@ export default function CodeChatUI() {
 
         <div className="text-sm font-medium text-black pr-1">00</div>
       </div>
-
-      <div className="bg-black text-white rounded-2xl overflow-hidden">
-        <div className="flex justify-between items-center px-4 py-2 bg-zinc-800">
-          <div className="flex gap-2">
-            <span className="text-xs px-3 py-1 rounded-md bg-white text-black">
-              HTML
-            </span>
-            <span className="text-xs px-3 py-1 rounded-md text-gray-300">
-              CSS
-            </span>
-            <span className="text-xs px-3 py-1 rounded-md text-gray-300">
-              JS
-            </span>
+      <div className="flex h-auto bg-[#F9F8FC] p-6 rounded-2xl">
+<div className="w-24 flex flex-col items-center bg-[#edebf1] rounded-2xl py-4 gap-6">
+          <div className="bg-[#EBE9F7] p-2 rounded-xl">
+            <HiOutlineLink className="w-5 h-5 text-[#4B4B4B]" />
           </div>
-          <button className="text-xs text-white">Copy Code</button>
+          <div className="text-[10px] text-gray-400 font-medium">12:22</div>
+          <hr className="text-gray-700" />
+          <div className="flex flex-col items-center gap-6 text-gray-500 mt-2">
+            <LuCopy className="w-5 h-5 hover:text-black cursor-pointer" />
+            <FiDownloadCloud className="w-5 h-5 hover:text-black cursor-pointer" />
+            <FiThumbsUp className="w-5 h-5 hover:text-black cursor-pointer" />
+            <FiThumbsDown className="w-5 h-5 hover:text-black cursor-pointer" />
+          </div>
         </div>
 
-        <pre className="px-4 py-3 whitespace-pre-wrap text-sm overflow-x-auto">
-          {`window.onmessage = ({ data: { pluginMessage } }) => {
+        <div>
+          <div className="flex-1 ml-4">
+          <div className="bg-black text-white rounded-2xl overflow-hidden">
+            <div className="flex justify-between items-center px-4 py-2 bg-zinc-800">
+              <div className="flex gap-2">
+                <span className="text-xs px-3 py-1 rounded-md bg-white text-black">
+                  HTML
+                </span>
+                <span className="text-xs px-3 py-1 rounded-md text-gray-300">
+                  CSS
+                </span>
+                <span className="text-xs px-3 py-1 rounded-md text-gray-300">
+                  JS
+                </span>
+              </div>
+              <button className="text-xs text-white">Copy Code</button>
+            </div>
+
+            <pre className="px-4 py-3 whitespace-pre-wrap text-sm overflow-x-auto">
+              {`window.onmessage = ({ data: { pluginMessage } }) => {
   if (pluginMessage.type === "EXPORT_RESULT") {
     const data = pluginMessage.files as CollectionExportRecord[];
     document.querySelector("textarea").innerHTML = JSON.stringify(data, null, 2);
   }
 }`}
-        </pre>
-      </div>
-
-      <p className="text-sm text-gray-600">
+            </pre>
+          </div>
+        </div>
+       <div className="text-sm text-gray-600 p-4">
         Vertical inspect effect library flatten strikethrough list export
         overflow outline. Figjam vertical share background export outline align
         mask edit list. Asset strikethrough layout.
-      </p>
-
-      <div className="flex justify-between items-center bg-gray-100 rounded-2xl px-4 py-3 text-sm text-gray-700">
-        <span>I have created a project in your Codepen account</span>
+       </div>
+        <div className="flex justify-between items-center bg-gray-100 rounded-2xl m-2 p-2 py-3 text-sm text-gray-700">
+        <span>I have created a project in your Codepen account.</span>
         <button className="flex items-center gap-2 px-3 py-1 rounded-md border border-gray-300 hover:bg-white">
           <FaCodepen className="w-4 h-4" />
           View on CodePen
         </button>
+      </div>
+        </div>
       </div>
     </div>
   );
