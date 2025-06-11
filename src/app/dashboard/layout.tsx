@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${poppins.className} bg-[#f9fafb] text-gray-900`}>
         <div className="flex px-6 py-10 rounded-xl min-h-screen bg-[#eae9ec] w-full">
           <Dashboard/>
-          <main className="flex-1 overflow-y-auto p-6 w-full">{children}</main>
+          <main className="flex-1 p-6 w-full">{children}</main>
         </div>
       </body>
     </html>

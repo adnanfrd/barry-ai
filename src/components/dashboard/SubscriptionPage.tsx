@@ -5,6 +5,7 @@ import { FaCheck, FaTimes } from 'react-icons/fa';
 import { Disclosure } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import PricingSection from './PriceSection';
 
 const features = [
   'AI Feature Personalization',
@@ -50,61 +51,11 @@ const faqs = [
 ];
 
 export default function SubscriptionPage() {
-  const router = useRouter();
-
-  const handleClick = () =>{
-router.push('/dashboard/checkout')
-}
+ 
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 font-poppins">
-      <h2 className="text-2xl font-bold mb-1">Cost-Effective AI Chat Services</h2>
-      <p className="text-sm text-gray-500 mb-6">Budget-friendly Package Options</p>
-
-      <div className="mb-8">
-        <div className="flex space-x-6 mb-6">
-          <label className="flex items-center gap-2 text-sm">
-            <input type="radio" name="billing" defaultChecked />
-            <span>Annual billing</span>
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            <input type="radio" name="billing" />
-            <span>Monthly billing</span>
-          </label>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`p-6 rounded-xl shadow-sm border ${
-                plan.featured ? 'bg-purple-600 text-white' : 'bg-white text-gray-800'
-              }`}
-            >
-              <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
-              <p className="text-sm mb-3">{plan.tag}</p>
-              <p className="text-2xl font-bold mb-2">{plan.price}/mo</p>
-              <ul className="text-sm space-y-1 mb-4">
-                {features.map((feat, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    {plan.features[i] ? (
-                      <FaCheck className="text-green-500" />
-                    ) : (
-                      <FaTimes className="text-red-400" />
-                    )}
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-              {plan.featured && (
-                <button onClick={handleClick} className="bg-white cursor-pointer text-purple-600 px-4 py-2 rounded-md font-semibold text-sm">
-                  Upgrade
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="max-w-7xl mx-auto px-2 bg-[#faf9fa] rounded-xl py-5 font-poppins">
+      <PricingSection/>
 
       <h3 className="text-lg font-semibold mb-3">Compare Features</h3>
       <div className="overflow-auto mb-10">
