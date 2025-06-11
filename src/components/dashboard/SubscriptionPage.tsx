@@ -6,39 +6,28 @@ import { Disclosure } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import PricingSection from './PriceSection';
+import CompareFeatures from './CompareFeatures';
 
 const features = [
-  'AI Feature Personalization',
-  'Custom Integration API',
-  'Priority Queueing',
-  'Data Export Options',
-  'Extended Message History',
-  'Enterprise Security Compliance',
+  "AI-Driven Personalization",
+  "Facial Recognition",
+  "AI-Powered Virtual Assistants",
+  "Smart History Feature",
+  "Google Immersive View with Maps",
+  "Gmail Help Me Write",
+  "Live Translation & Interpreter",
+  "Deep Learning, Facial Recognition",
 ];
 
 const plans = [
-  {
-    name: 'Free',
-    price: '$0',
-    tag: 'Basic AI Chat Services',
-    monthly: true,
-    features: [true, false, false, false, false, false],
-  },
-  {
-    name: 'Pro',
-    price: '$89',
-    tag: 'Scale AI Chat Workflows',
-    monthly: true,
-    features: [true, true, true, true, false, false],
-  },
-  {
-    name: 'Enterprise',
-    price: '$399',
-    tag: 'Enterprise-Level Security',
-    monthly: true,
-    featured: true,
-    features: [true, true, true, true, true, true],
-  },
+  [true, false, true, false], // AI-Driven Personalization
+  [true, false, true, true],  // Facial Recognition
+  [false, true, true, true],  // AI-Powered Virtual Assistants
+  [false, false, false, true], // Smart History Feature
+  [false, false, true, true],  // Google Immersive View
+  [false, true, false, true],  // Gmail Help Me Write
+  [false, false, false, true], // Live Translation
+  [false, false, false, true], // Deep Learning
 ];
 
 const faqs = [
@@ -56,39 +45,7 @@ export default function SubscriptionPage() {
   return (
     <div className="max-w-7xl mx-auto px-2 bg-[#faf9fa] rounded-xl py-5 font-poppins">
       <PricingSection/>
-
-      <h3 className="text-lg font-semibold mb-3">Compare Features</h3>
-      <div className="overflow-auto mb-10">
-        <table className="min-w-full bg-white text-sm text-left border border-gray-200 rounded-xl">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="p-3 border">Feature</th>
-              {plans.map((plan) => (
-                <th key={plan.name} className="p-3 border">
-                  {plan.name}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {features.map((feature, idx) => (
-              <tr key={idx} className="border-t">
-                <td className="p-3 border font-medium text-gray-700">{feature}</td>
-                {plans.map((plan) => (
-                  <td key={plan.name} className="p-3 border text-center">
-                    {plan.features[idx] ? (
-                      <FaCheck className="text-green-500 mx-auto" />
-                    ) : (
-                      <FaTimes className="text-red-400 mx-auto" />
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
+<CompareFeatures/>
       <h3 className="text-lg font-semibold mb-4">Frequently asked questions</h3>
       <div className="bg-white rounded-xl shadow p-4">
         <div className="divide-y divide-gray-200">
