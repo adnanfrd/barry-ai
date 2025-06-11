@@ -65,13 +65,13 @@ export default function Sidebar() {
  }
 
   return (
-    <aside className="w-64 shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
+    <aside className="w-64 rounded-xl shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
       <div>
         <div className="flex justify-between items-center">
           <div className="flex items-center mb-6">
             <div>
               <Image
-                src="/app-icon.png" // Replace with your image path or URL
+                src="/app-icon.png" 
                 alt="User Avatar"
                 width={32}
                 height={32}
