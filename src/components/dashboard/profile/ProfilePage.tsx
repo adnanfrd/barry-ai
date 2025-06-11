@@ -11,12 +11,11 @@ export default function ProfilePage() {
   const [bio, setBio] = useState("Placeholder");
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold text-black mb-2">Profile</h1>
-      <hr className="border-gray-200 mb-6" />
+    <div className=" h-screen max-w-4xl bg-white mx-auto">
+      <h1 className="text-2xl p-3 font-bold text-black mb-2">Profile</h1>
+      <hr className="border-gray-200 mb-2 p-3" />
 
-      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-md space-y-6">
-        {/* Avatar Upload Section */}
+      <div className=" py-6 px-2 sm:p-6 rounded-2xl space-y-6">
         <div className="flex items-start gap-4">
           <div className="relative w-16 h-16 rounded-full overflow-hidden">
             <Image
@@ -36,7 +35,6 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Name Field */}
         <div>
           <label className="block text-sm font-medium text-black mb-1">
             Name
@@ -90,11 +88,10 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Update Button */}
         <div>
           <button
             onClick={() => alert("Updated!")}
-            className="bg-purple-600 text-white hover:bg-purple-700 px-6 py-2 rounded-md text-sm font-semibold"
+            className="bg-purple-600 text-white hover:bg-purple-700 px-6 py-2 rounded-xl text-sm font-medium"
           >
             Update
           </button>

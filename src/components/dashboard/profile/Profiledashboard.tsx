@@ -64,7 +64,7 @@ const  handleClick = () =>{
   
 }
   return (
-    <aside className="w-64 rounded-xl shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
+    <aside className="w-64 rounded-l-xl shrink-0 bg-[#faf9fa] border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
       <div>
         <nav className="mb-6 space-y-1">
           {navItems.map((item) => (
