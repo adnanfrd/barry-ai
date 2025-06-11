@@ -13,73 +13,90 @@ import ChatSidebar from './ChatSidebar';
 
 
 
-const messages = [
-  {
-    title: 'Shadow mask overflow pixel',
-    content: 'Pixel outline list figma line.',
-    time: 'Just Now',
-    avatar: '/image.png',
-  },
-  {
-    title: 'Horizontal frame figjam component',
-    content: 'Frame comment scrolling overflow star.',
-    time: 'Just Now',
-    image: '/app-icon.png',
-    avatar: '/image.png',
-  },
-  {
-    title: 'Arrow list undo inspect',
-    content: 'Arrange text union boolean subtract.',
-    time: 'Just Now',
-    avatar: '/image.png',
-  },
-  {
-    title: 'Duplicate subtract inspect rectangle',
-    content: 'Editor project frame subtract undo bullet arrange shadow thumbnail.',
-    time: 'Just Now',
-    avatar: '/image.png',
-  },
-];
+// const messages = [
+//   {
+//     title: 'Shadow mask overflow pixel',
+//     content: 'Pixel outline list figma line.',
+//     time: 'Just Now',
+//     avatar: '/image.png',
+//   },
+//   {
+//     title: 'Horizontal frame figjam component',
+//     content: 'Frame comment scrolling overflow star.',
+//     time: 'Just Now',
+//     image: '/app-icon.png',
+//     avatar: '/image.png',
+//   },
+//   {
+//     title: 'Arrow list undo inspect',
+//     content: 'Arrange text union boolean subtract.',
+//     time: 'Just Now',
+//     avatar: '/image.png',
+//   },
+//   {
+//     title: 'Duplicate subtract inspect rectangle',
+//     content: 'Editor project frame subtract undo bullet arrange shadow thumbnail.',
+//     time: 'Just Now',
+//     avatar: '/image.png',
+//   },
+// ];
 
 export default function ChatsPage() {
   const [input, setInput] = useState('');
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6">
-      <div className="bg-white rounded-2xl p-6 shadow-md min-h-screen relative overflow-y-auto">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-[url('/art work.png')] bg-cover bg-center rounded-t-2xl" />
-        <div className="relative z-10 mt-20 text-center">
-          <div className="flex justify-center">
-            <div className="h-auto w-auto rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-2xl font-bold">
-              <Image src="/image.png" alt="Logo" width={40} height={40} />
-            </div>
+     <div className="bg-white rounded-2xl p-6 min-h-screen relative overflow-y-auto shadow-md">
+      {/* Background Illustration */}
+      <div className="absolute top-0 left-0 right-0 h-48 rounded-t-2xl overflow-hidden z-0">
+        <Image
+          src="/art work.png"
+          alt="Artwork Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Header */}
+      <div className="relative z-10 mt-8 text-center">
+        <div className="flex justify-center">
+          <div className="bg-white p-3 rounded-full shadow-lg flex justify-center items-center ">
+            <Image src="/image.png" alt="Logo" width={100} height={100} />
           </div>
-          <h1 className="text-2xl font-bold mt-4">Fusion AI: Your Digital Co-Pilot</h1>
-          <p className="text-gray-500 mt-2 max-w-md mx-auto text-sm">
-            Unlock the potential of AI. Seamlessly integrate machine learning, natural language understanding, and predictive analytics into your workflows.
-          </p>
         </div>
+        <h1 className="text-2xl font-bold mt-4 text-gray-800">
+          Fusion AI: Your Digital Co-Pilot
+        </h1>
+        <p className="text-gray-500 mt-2 max-w-md mx-auto text-sm">
+          Unlock the Potential of AI. Seamlessly integrate machine learning,
+          natural language understanding, and predictive analytics into your
+          workflows.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-3 gap-4 mt-10">
-          {[
-            { label: 'Photo Generation', icon: <MdPhotoSizeSelectActual/> },
-            { label: 'Video Generation', icon: <IoMdVideocam/> },
-            { label: 'Education & Science', icon: <FaWineGlass/> },
-            { label: 'Code Generation', icon: <IoIosCode/> },
-            { label: 'Voice Tools', icon: <MdKeyboardVoice/> },
-            { label: 'Text Recognition', icon: <BsFillFileEarmarkTextFill/> },
-          ].map((tool) => (
-            <div
-              key={tool.label}
-              className="bg-gray-100 p-4 rounded-xl flex flex-col items-center justify-center text-sm font-medium text-gray-700 shadow hover:shadow-md transition-all"
-            >
-              <span className="text-2xl mb-2">{tool.icon}</span>
-              {tool.label}
-            </div>
-          ))}
-        </div>
+      {/* Tool Cards */}
+      <div className="grid grid-cols-3 gap-4 mt-10 relative z-10">
+        {[
+          { label: "Photo Generation", icon: <MdPhotoSizeSelectActual /> },
+          { label: "Video Generation", icon: <IoMdVideocam /> },
+          { label: "Education & Science", icon: <FaWineGlass /> },
+          { label: "Code Generation", icon: <IoIosCode /> },
+          { label: "Voice Tools", icon: <MdKeyboardVoice /> },
+          { label: "Text Recognition", icon: <BsFillFileEarmarkTextFill /> },
+        ].map((tool) => (
+          <div
+            key={tool.label}
+            className="bg-[#f9f9fb] p-4 rounded-xl flex flex-col items-center justify-center text-sm font-medium text-gray-700 shadow hover:shadow-md transition-all"
+          >
+            <span className="text-2xl mb-2 text-purple-600">{tool.icon}</span>
+            {tool.label}
+          </div>
+        ))}
+      </div>
 
-        <div className="mt-6 flex items-center bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm">
+      {/* Input Area */}
+      <div className="mt-10 relative z-10">
+        <div className="flex items-center bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm">
           <input
             type="text"
             placeholder="Ask me anything"
@@ -92,6 +109,7 @@ export default function ChatsPage() {
           </button>
         </div>
       </div>
+    </div>
     <ChatSidebar/>
       {/* Right Panel */}
       {/* <div className="flex flex-col gap-4">
