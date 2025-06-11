@@ -5,7 +5,6 @@ import PromptInput from '@/components/subcomponents/PromptInput'
 import React from 'react'
 
 const page = () => { 
-  const msg = "Education & Science";
   return (
     <div className="flex h-screen">
      <div className="flex flex-col flex-1 px-3">
