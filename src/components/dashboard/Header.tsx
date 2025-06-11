@@ -22,12 +22,12 @@ const titleMap: Record<string, string> = {
   confirmation: 'Confirmation',
   checkout: 'Checkout',
   orderconfirmation: 'Order Confirmation',
-  photo: 'Photo',
+  photo: 'Photo Generation',
   search: 'Search',
   settings: 'Settings',
   subscriptions: 'Subscriptions',
   updatesfaq: 'Updates & FAQ',
-  video: 'Video',
+  video: 'Video Generation',
   voice: 'Voice',
   welcome: 'Welcome',
 };
@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <div className="relative w-full border-b border-[#f5f5f5] px-4 py-4 bg-white rounded-t-2xl shadow-sm border-b border-gray-200 flex items-center justify-between">
-      <h2 className="text-base font-bold text-black z-10">{title}</h2>
+      <h2 className="text-lg font-bold text-black z-10">{title}</h2>
 
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
