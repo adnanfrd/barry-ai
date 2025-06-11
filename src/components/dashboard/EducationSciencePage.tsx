@@ -1,8 +1,7 @@
+"use client";
 import { useState } from "react";
 import { FiDownload, FiMoreVertical } from "react-icons/fi";
 import Image from "next/image";
-import photo from "@/public/photo.png";
-import image from "@/public/image.png";
 
 export default function EducationSciencePage() {
   const [enabled, setEnabled] = useState(true);
@@ -32,7 +31,13 @@ export default function EducationSciencePage() {
       {/* Image Cards */}
       <div className="flex gap-4">
         <div className="w-1/2 bg-gray-100 p-4 rounded-xl">
-          <Image src={image} alt="Card image" className="rounded-lg" />
+          <Image
+            src="/photo.png"
+            width={200}
+            height={200}
+            alt="Card image"
+            className="rounded-lg"
+          />
           <h2 className="font-semibold mt-2">File format</h2>
           <p className="text-sm text-gray-500">
             Make things accessible using data. Example: use vibrant enough color
@@ -40,7 +45,13 @@ export default function EducationSciencePage() {
           </p>
         </div>
         <div className="w-1/2 bg-gray-100 p-4 rounded-xl">
-          <Image src={photo} alt="Card photo" className="rounded-lg" />
+          <Image
+            src="/photo.png"
+            width={200}
+            height={200}
+            alt="Card photo"
+            className="rounded-lg"
+          />
           <h2 className="font-semibold mt-2">File format</h2>
           <p className="text-sm text-gray-500">
             Information provided should be relevant and easy to understand.
@@ -92,7 +103,8 @@ export default function EducationSciencePage() {
           hidden values unless it improves user experience.
         </p>
         <p>
-          <code>opacity-0</code> sets full transparency. <code>opacity-100</code>
+          <code>opacity-0</code> sets full transparency.{" "}
+          <code>opacity-100</code>
           shows full visibility.
         </p>
       </div>
