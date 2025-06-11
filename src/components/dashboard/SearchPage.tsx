@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { Button, Menu } from "@headlessui/react";
 import { FiChevronDown, FiMoreHorizontal } from "react-icons/fi";
-
+type Item = {
+  title: string;
+  time: string;
+  content: string;
+};
 export default function SearchPage() {
   const todayItems = [
     {
@@ -89,7 +93,7 @@ export default function SearchPage() {
   );
 }
 
-function Section({ title, date, items }: { title: string; date?: string; items: any[] }) {
+function Section({ title, date, items }: { title: string; date?: string; items: Item[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-baseline justify-between">

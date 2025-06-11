@@ -4,6 +4,7 @@ import { Tab } from "@headlessui/react";
 import { FaChevronDown, FaTerminal } from "react-icons/fa";
 import { Disclosure } from "@headlessui/react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Image from "next/image";
 
 const updates = [
   {
@@ -83,7 +84,7 @@ export default function FaqPage() {
                     (idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse")
                   }
                 >
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
                     className="w-full md:w-64 h-32 object-cover rounded-lg"

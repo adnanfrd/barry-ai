@@ -47,14 +47,14 @@ const navItems = [
   },
 ];
 
-const colors = [
-  "#6c6c6c",
-  "#4a90e2",
-  "#4caf50",
-  "#9b59b6",
-  "#d2691e",
-  "#d2691e",
-];
+// const colors = [
+//   "#6c6c6c",
+//   "#4a90e2",
+//   "#4caf50",
+//   "#9b59b6",
+//   "#d2691e",
+//   "#d2691e",
+// ];
 
 export default function Profiledashboard() {
   const pathname = usePathname();
