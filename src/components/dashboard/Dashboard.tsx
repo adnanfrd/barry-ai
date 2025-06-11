@@ -1,7 +1,7 @@
 // --- 2. components/Sidebar.tsx ---
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaCirclePlus } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
@@ -60,6 +60,10 @@ const favorites = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+ const handleSearch = () =>{
+   router.push('/dashboard/search')
+ }
 
   return (
     <aside className="w-64 shrink-0 bg-white border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
@@ -84,14 +88,16 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <div className="relative w-full mb-4">
+        <div onClick={handleSearch} className="relative w-full mb-4 cursor-pointer">
+          
           <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg" />
           <input
             type="text"
             placeholder="Search"
             className="w-full pl-10 pr-3 py-2 text-sm rounded-md border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
-        </div>
+        
+        </div> 
 
         <nav className="mb-6 space-y-1">
           {navItems.map((item) => (
