@@ -3,7 +3,7 @@ import { FaArrowRight, FaPlus } from "react-icons/fa";
 
 const PromptInput = () => {
   return (
-    <div className="mt-12 relative z-10">
+    <div className="mt-12 mb-6 relative z-10">
       <div className="flex items-center bg-[#f9f9fb] rounded-full px-4 py-2 shadow-sm border border-[#e5e5ef]">
         <div className="px-3 text-gray-600">
           <FaPlus className="w-4 h-4" />

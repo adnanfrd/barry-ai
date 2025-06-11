@@ -2,11 +2,12 @@
 
 import { Tab } from '@headlessui/react';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import {
   HiOutlineStar,
   HiOutlineDotsVertical,
 } from 'react-icons/hi';
-import { FiUpload } from "react-icons/fi";
+import { FiUpload } from 'react-icons/fi';
 
 const tabs = ['Blanced', 'Creative', 'Precise'];
 
@@ -14,12 +15,32 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
+// Optional: Title map
+const titleMap: Record<string, string> = {
+  code: 'Code Generation',
+  education: 'Education and Science',
+  confirmation: 'Confirmation',
+  checkout: 'Checkout',
+  orderconfirmation: 'Order Confirmation',
+  photo: 'Photo',
+  search: 'Search',
+  settings: 'Settings',
+  subscriptions: 'Subscriptions',
+  updatesfaq: 'Updates & FAQ',
+  video: 'Video',
+  voice: 'Voice',
+  welcome: 'Welcome',
+};
+
 export default function Header() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const pathname = usePathname();
+  const pageKey = pathname?.split('/').pop() || '';
+  const title = titleMap[pageKey] || 'Chat';
 
   return (
     <div className="relative w-full border-b border-[#f5f5f5] px-4 py-4 bg-white rounded-t-2xl shadow-sm border-b border-gray-200 flex items-center justify-between">
-      <h2 className="text-base font-bold text-black z-10">Code Generation</h2>
+      <h2 className="text-base font-bold text-black z-10">{title}</h2>
 
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
