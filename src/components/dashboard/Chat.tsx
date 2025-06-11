@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import {  FaPlus, FaWineGlass, FaArrowRight } from 'react-icons/fa';
+import { FaWineGlass } from 'react-icons/fa';
 import Image from 'next/image';
 import { MdPhotoSizeSelectActual, MdKeyboardVoice } from "react-icons/md";
 import { IoMdVideocam, IoIosCode } from "react-icons/io";
@@ -9,9 +8,9 @@ import { IoMdVideocam, IoIosCode } from "react-icons/io";
 import { BsFillFileEarmarkTextFill } from "react-icons/bs";
 import ChatSidebar from './ChatSidebar';
 import Link from 'next/link';
+import PromptInput from '../subcomponents/PromptInput';
 
 export default function ChatsPage() {
-  const [input, setInput] = useState('');
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6">
@@ -92,35 +91,7 @@ export default function ChatsPage() {
     ))}
   </div>
 
-  <div className="mt-10 relative z-10">
-  <div className="flex items-center bg-[#f9f9fb] rounded-full px-4 py-2 shadow-sm border border-[#e5e5ef]">
-    
-    {/* Plus Icon */}
-    <div className="px-3 text-gray-600">
-      <FaPlus className="w-4 h-4" />
-    </div>
-
-    {/* Left Divider */}
-    <div className="w-px h-6 bg-gray-200 mx-2" />
-
-    {/* Input Field */}
-    <input
-      type="text"
-      placeholder="Ask me anything"
-      value={input}
-      onChange={(e) => setInput(e.target.value)}
-      className="flex-1 text-sm outline-none bg-transparent placeholder-gray-400"
-    />
-
-    {/* Right Divider */}
-    <div className="w-px h-6 bg-gray-200 mx-2" />
-
-    {/* Send Arrow Icon */}
-    <button className="px-3 text-purple-600">
-      <FaArrowRight className="w-4 h-4" />
-    </button>
-  </div>
-</div>
+  <PromptInput/>
 
 </div>
 
