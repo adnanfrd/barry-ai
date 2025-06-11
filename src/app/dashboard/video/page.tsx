@@ -1,8 +1,11 @@
+import VideoGenerationPage from '@/components/dashboard/VideoGenerationPage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>video goes here...</div>
+    <div>
+      <VideoGenerationPage/>
+    </div>
   )
 }
 

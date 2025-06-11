@@ -76,7 +76,7 @@ export default function VoiceToolsPage() {
           <span className="absolute bottom-1 right-2 text-xs text-gray-400">12:22</span>
         </div>
         <Image
-          src="https://source.unsplash.com/40x40/?face"
+          src="/photo.png"
           alt="user"
           width={32}
           height={32}
