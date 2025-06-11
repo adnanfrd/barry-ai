@@ -150,7 +150,8 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="pt-4">
+      <div>
+        <div className="pt-4">
        <div className=" bg-white rounded-xl p-4 shadow-sm w-full max-w-xs">
       <div className="flex items-center gap-3">
         <Image
@@ -197,6 +198,7 @@ export default function Sidebar() {
         <FiMoon className="w-5 h-5 cursor-pointer" />
       </button>
     </div>
+      </div>
     </aside>
   );
 }

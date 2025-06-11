@@ -5,6 +5,9 @@ import { FaChevronDown, FaTerminal } from "react-icons/fa";
 import { Disclosure } from "@headlessui/react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
+import { LuClock } from "react-icons/lu";
+import { CiMap } from "react-icons/ci";
+import { CgMailOpen } from "react-icons/cg";
 
 const updates = [
   {
@@ -12,24 +15,28 @@ const updates = [
     date: "27 May, 2025",
     desc: "Microsoft is integrating AI deep into the Windows Shell, the advanced AI interface now driving the operating system.",
     image: "/updates1.png",
+    icon: <FaTerminal className="text-teal-600 text-lg" />,
   },
   {
     title: "Smart History Feature",
     date: "26 May, 2025",
     desc: "Microsoft Timeline, a released feature that allowed users to revisit daily workflow through visual records, is making a comeback with AI recommendations.",
     image: "/updates2.png",
+    icon: <LuClock className="text-teal-600 text-lg" />, 
   },
   {
     title: "Google Immersive View with Maps",
     date: "22 May, 2025",
     desc: "Immersive Street View now enhanced with AI, provides a 3D flyover-style view of cities worldwide.",
     image: "/updates3.png",
+    icon: <CiMap className="text-teal-600 text-lg" />,
   },
   {
     title: "Grand Image Help via Meta",
     date: "20 May, 2025",
     desc: 'Meta AI-powered "Help via Vision" feature assists users in completing image tasks.',
     image: "/updates4.png",
+    icon: <CgMailOpen className="text-teal-600 text-lg" />,
   },
 ];
 
@@ -48,30 +55,31 @@ function classNames(...classes: string[]) {
 
 export default function FaqPage() {
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 font-poppins">
+    <div className="w-full bg-white p-4 rounded-xl max-w-5xl mx-auto px-4 font-poppins">
       <h1 className="text-2xl font-bold mb-1">Updates & FAQ</h1>
       <p className="text-sm text-gray-500 mb-6">
         Enhancements, Resolutions & Upgrades
       </p>
 
       <Tab.Group>
-        <Tab.List className="flex space-x-4 border-b border-gray-200 mb-4">
-          {["Updates", "FAQ"].map((tab) => (
-            <Tab
-              key={tab}
-              className={({ selected }) =>
-                classNames(
-                  "px-4 py-2 text-sm font-semibold  rounded-t-md cursor-pointer focus:outline-none",
-                  selected
-                    ? "bg-white border border-b-0 border-gray-200 text-purple-600"
-                    : "text-gray-600 hover:text-purple-500"
-                )
-              }
-            >
-              {tab}
-            </Tab>
-          ))}
-        </Tab.List>
+        <Tab.List className="flex space-x-6 border-b border-gray-200">
+  {["Updates", "FAQ"].map((tab) => (
+    <Tab
+      key={tab}
+      className={({ selected }) =>
+        classNames(
+          "relative pb-2 text-sm font-semibold cursor-pointer focus:outline-none",
+          selected
+            ? "text-purple-600 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:w-4 after:h-1 after:rounded-full after:bg-purple-600"
+            : "text-gray-700"
+        )
+      }
+    >
+      {tab}
+    </Tab>
+  ))}
+</Tab.List>
+
 
         <Tab.Panels>
           <Tab.Panel>
@@ -87,17 +95,17 @@ export default function FaqPage() {
                   <Image
                     src={item.image}
                     alt={item.title}
+                    height={170}
+                    width={150}
                     className="w-full md:w-64 h-32 object-cover rounded-lg"
                   />
 
                   <div className="flex-1 flex gap-4">
                     <div className="flex flex-col items-start gap-2 w-10">
-                      <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
-                        <FaTerminal className="text-teal-600 text-lg" />
-                        {/* <LuClock />
-                        <CiMap />
-                        <CgMailOpen /> */}
-                      </div>
+                     <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
+  {item.icon}
+</div>
+
                     </div>
                     <div className="space-y-2">
                       <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
