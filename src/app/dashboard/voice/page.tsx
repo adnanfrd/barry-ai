@@ -1,8 +1,11 @@
+import VoiceToolsPage from '@/components/dashboard/VoiceToolsPage'
 import React from 'react'
 
 const voice = () => {
   return (
-    <div>voice page hereeeee...</div>
+    <div>
+      <VoiceToolsPage/>
+    </div>
   )
 }
 

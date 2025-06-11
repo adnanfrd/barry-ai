@@ -1,8 +1,11 @@
+import AppearancePage from '@/components/dashboard/profile/AppearancePage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Appearance page</div>
+    <div>
+      <AppearancePage/>
+    </div>
   )
 }
 
