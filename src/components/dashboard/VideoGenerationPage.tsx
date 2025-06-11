@@ -10,7 +10,7 @@ import { LuCopy } from "react-icons/lu";
 
 export default function VideoGenerationPage() {
   return (
-    <div className="min-h-screen bg-[#ffff] p-4 mt-4 text-sm">
+    <div className="min-h-screen bg-[#ffff] p-4 text-sm">
       <div className="flex justify-end">
         <div className="max-w-[90%] md:max-w-[75%] flex gap-20 mb-4 rounded-2xl border border-[#E2DFFC] overflow-hidden">
           <div className="flex-1 bg-white px-4 py-3">
