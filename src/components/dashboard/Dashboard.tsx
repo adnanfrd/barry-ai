@@ -183,7 +183,7 @@ export default function Sidebar() {
     </div>
       </div>
 
-      <div className="flex items-center justify-center p-4 rounded-full w-fit">
+      <div className="flex items-center justify-center p-4 rounded-full max-w-xs">
       <button
         type="button"
         className="px-10 py-2 cursor-pointer rounded-l-full bg-white border-2 border-gray-200 shadow text-gray-900"
