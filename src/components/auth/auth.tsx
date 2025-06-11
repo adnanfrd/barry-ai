@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 const AuthPage = () => {
     const router = useRouter();
  const handleClick = () =>{
-    router.push('/dashboard/chats')
+    router.push('/dashboard')
  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-4 font-poppins">
