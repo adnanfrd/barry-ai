@@ -6,11 +6,11 @@ import { HiSelector } from 'react-icons/hi';
 import { useState } from 'react';
 
 const currencies = [
-  { code: 'USD', label: 'US Dollar', flag: '🇺🇸' },
-  { code: 'GBP', label: 'British Pound', flag: '🇬🇧' },
-  { code: 'EUR', label: 'Euro', flag: '🇪🇺' },
-  { code: 'JPY', label: 'Japanese Yen', flag: '🇯🇵' },
-  { code: 'CAD', label: 'Canadian Dollar', flag: '🇨🇦' },
+  { code: 'USD', label: 'US Dollar', flag: '🇺🇸' }, // United States
+  { code: 'GBP', label: 'British Pound', flag: '🇬🇧' }, // United Kingdom
+  { code: 'EUR', label: 'Euro', flag: '🇪🇺' }, // European Union
+  { code: 'JPY', label: 'Japanese Yen', flag: '🇯🇵' }, // Japan
+  { code: 'CAD', label: 'Canadian Dollar', flag: '🇨🇦' }, // Canada
 ];
 
 const features = [
@@ -68,7 +68,7 @@ export default function EnterpriseCheckout() {
           <p className="text-sm font-semibold">Plan</p>
           <div className="flex items-center gap-2">
             <span className="font-bold text-lg">Enterprise</span>
-            <span className="bg-green-100 text-green-700 px-2 py-0.5 text-xs rounded-full">Popular</span>
+            <span className="bg-green-700 text-white px-2 py-0.5 text-xs rounded-full">Popular</span>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function EnterpriseCheckout() {
         <ul className="space-y-4">
           {features.map((feat, i) => (
             <li key={i} className="flex items-start gap-2 text-sm">
-              <FaCheckCircle className="text-green-500 mt-1" /> {feat}
+              <FaCheckCircle className="text-green-700 mt-1" /> {feat}
             </li>
           ))}
         </ul>
