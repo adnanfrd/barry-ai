@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
 import { FaCheckCircle } from "react-icons/fa";
 export default function PurchaseConfirmation() {
   return (

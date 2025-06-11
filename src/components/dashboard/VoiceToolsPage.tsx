@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { FaRegStar, FaRegCommentDots, FaUpload, FaEllipsisV } from "react-icons/fa";
+import { FaRegStar, FaUpload, FaEllipsisV } from "react-icons/fa";
 import { HiOutlineShare } from "react-icons/hi";
 import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 import { TbMessageCircle } from "react-icons/tb";

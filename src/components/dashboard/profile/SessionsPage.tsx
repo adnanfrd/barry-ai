@@ -54,7 +54,7 @@ export default function SessionsPage() {
               </p>
               <p className="text-xs text-purple-700 mb-2">
                 2FA significantly boosts the security of your account. Even if someone
-                guesses your password, they won't be able to access your account without
+                guesses your password, they won&apos;t be able to access your account without
                 the second authentication factor.
               </p>
               <div className="flex items-center gap-4 text-sm">

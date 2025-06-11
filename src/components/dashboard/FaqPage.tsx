@@ -1,13 +1,9 @@
-// --- app/faq/page.tsx ---
 "use client";
 
 import { Tab } from "@headlessui/react";
 import { FaChevronDown, FaTerminal } from "react-icons/fa";
 import { Disclosure } from "@headlessui/react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { LuClock } from "react-icons/lu";
-import { CiMap } from "react-icons/ci";
-import { CgMailOpen } from "react-icons/cg";
 
 const updates = [
   {
@@ -77,7 +73,6 @@ export default function FaqPage() {
         </Tab.List>
 
         <Tab.Panels>
-          {/* --- Updates Panel --- */}
           <Tab.Panel>
             <div className="space-y-6">
               {updates.map((item, idx) => (

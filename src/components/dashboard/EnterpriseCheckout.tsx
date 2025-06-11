@@ -1,4 +1,3 @@
-// --- app/subscriptions/enterprise/page.tsx ---
 'use client';
 
 import { Listbox } from '@headlessui/react';
@@ -131,7 +130,7 @@ export default function EnterpriseCheckout() {
 
       <div className="mt-6 flex justify-between items-center flex-wrap gap-4">
         <p className="text-xs text-gray-500 max-w-md">
-          By clicking "Start Brainwave Enterprise plan", you agree to be charged £{total} every month, unless you cancel.
+  By clicking &quot;Start Brainwave Enterprise plan&quot;, you agree to be charged £{total} every month, unless you cancel.
         </p>
         <button className="bg-purple-600 text-white text-sm font-semibold px-6 py-2 rounded-md">
           Start Enterprise Plan

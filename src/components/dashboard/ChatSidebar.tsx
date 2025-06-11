@@ -59,13 +59,16 @@ export default function ChatSidebar() {
           <div>
             <CiBellOn className="w-5 h-5" />
           </div>
-          <Image
-            src="/photo1.png"
-            alt="User Avatar"
-            width={32}
-            height={32}
-            className="rounded-full object-cover"
-          />
+          <div className="relative">
+            <Image
+              src="/photo1.png"
+              alt="User Avatar"
+              width={32}
+              height={32}
+              className="rounded-full object-cover"
+            />
+            <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-700 border-2 border-white rounded-full"></span>
+          </div>
         </div>
       </div>
 
@@ -85,7 +88,9 @@ export default function ChatSidebar() {
               <p className="text-sm font-bold text-gray-900 leading-tight">
                 {msg.title}
               </p>
-              <p className="text-sm text-gray-600 leading-snug">{msg.content}</p>
+              <p className="text-sm text-gray-600 leading-snug">
+                {msg.content}
+              </p>
             </div>
 
             {/* Image in middle if exists */}

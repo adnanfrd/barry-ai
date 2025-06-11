@@ -1,12 +1,10 @@
 "use client";
-import { Fragment, useState } from "react";
-import { Dialog, Listbox, Menu, Switch, Transition } from "@headlessui/react";
-import { FaChevronDown, FaEllipsisV, FaEye, FaPaperPlane } from "react-icons/fa";
+import { Fragment } from "react";
+import {  Menu,  Transition } from "@headlessui/react";
+import {   FaEllipsisV, FaPaperPlane } from "react-icons/fa";
 import Image from "next/image";
 
-export default function WelcomePage() {
-  const [selected, setSelected] = useState("PDF");
-  const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+export default function WelcomePage() {   
 
   return (
     <div className="flex h-screen overflow-hidden bg-white text-sm">

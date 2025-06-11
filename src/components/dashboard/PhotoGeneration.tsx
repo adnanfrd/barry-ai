@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { HiOutlineLink } from "react-icons/hi";
 import { PiStar, PiArrowsClockwise, PiEyeSlash } from "react-icons/pi";

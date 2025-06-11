@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
@@ -92,25 +92,6 @@ const  handleClick = () =>{
           </div>
         </nav>
       </div>
-
-      {/* <div className="border-t pt-4">
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-sm font-semibold text-green-700">
-            JB
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-medium text-gray-800">James Broong</p>
-            <p className="text-xs text-gray-500">james@broong.co.uk</p>
-            <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-              <div
-                className="bg-purple-500 h-1.5 rounded-full"
-                style={{ width: "50%" }}
-              ></div>
-            </div>
-            <p className="text-xs text-gray-400 mt-1">50% Completed</p>
-          </div>
-        </div>
-      </div> */}
     </aside>
   );
 }

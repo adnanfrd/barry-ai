@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { HiOutlineLink } from "react-icons/hi";
 import {
-  PiMicrophone,
   PiCaretDown,
 } from "react-icons/pi";
 import { FiDownloadCloud, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
