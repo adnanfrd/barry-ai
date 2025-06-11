@@ -6,7 +6,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex">
          <div className="flex flex-col flex-1 px-3">
            <Header />
            
