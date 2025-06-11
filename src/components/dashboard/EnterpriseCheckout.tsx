@@ -4,6 +4,7 @@ import { Listbox } from '@headlessui/react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { HiSelector } from 'react-icons/hi';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const currencies = [
   { code: 'USD', label: 'US Dollar', flag: '🇺🇸' }, // United States
@@ -132,9 +133,11 @@ export default function EnterpriseCheckout() {
         <p className="text-xs text-gray-500 max-w-md">
   By clicking &quot;Start Brainwave Enterprise plan&quot;, you agree to be charged £{total} every month, unless you cancel.
         </p>
-        <button className="bg-purple-600 text-white text-sm font-semibold px-6 py-2 rounded-md">
-          Start Enterprise Plan
-        </button>
+     <Link href="/dashboard/confirmation" className='cursor-pointer'>
+  <button className="bg-purple-600 text-white text-sm font-semibold px-6 py-2 rounded-md">
+    Start Enterprise Plan
+  </button>
+</Link>
       </div>
     </div>
   );

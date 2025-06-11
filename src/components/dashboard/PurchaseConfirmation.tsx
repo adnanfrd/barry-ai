@@ -1,43 +1,67 @@
+"use client";
+
 import { FaCheckCircle } from "react-icons/fa";
+
 export default function PurchaseConfirmation() {
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-2xl font-bold text-gray-900">Thank you for your purchase!</h1>
-        <p className="text-sm text-gray-600 mt-1">We are all set, enjoy the ride</p>
+    <div className="min-h-screen rounded-xl bg-white py-10 px-4 sm:px-6 lg:px-8 font-poppins">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-2xl font-bold text-black">Thank you for your purchase!</h1>
+        <p className="text-sm text-gray-500">We are all set, enjoy the ride</p>
 
-        <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mt-6 flex items-start">
-          <FaCheckCircle className="h-5 w-5 mr-2 text-green-500" aria-hidden="true" />
+        <div className="bg-[#E6F6F0] border border-[#C8F4DE] text-[#057A55] rounded-md p-4 mt-6 flex items-start">
+          <FaCheckCircle className="h-5 w-5 mr-2 mt-0.5 text-[#057A55]" />
           <p className="text-sm">
             Your order has been received and is currently being processed. You will receive an email confirmation with your order details shortly.
           </p>
         </div>
 
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-800">Order Affirmation</h2>
-          <div className="mt-2 space-y-1">
-            <p><strong>Plan:</strong> Enterprise</p>
-            <p><strong>Subscription:</strong> £399/month</p>
+        {/* Order Affirmation */}
+        <div className="mt-8 border-t border-gray-200">
+          <h2 className="text-sm font-semibold text-black mt-6 mb-2">Order Affirmation</h2>
+          <div className="border border-gray-200 rounded-md overflow-hidden text-sm">
+            <div className="flex justify-between px-4 py-3 border-b border-gray-200">
+              <span>Plan</span>
+              <span className="font-semibold">Enterprise</span>
+            </div>
+            <div className="flex justify-between px-4 py-3">
+              <span>Subscription</span>
+              <span className="font-semibold">£399/month</span>
+            </div>
           </div>
         </div>
 
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-800">Billing Details</h2>
-          <div className="mt-2 space-y-1">
-            <p><strong>Name:</strong> Pavlo Sanchez</p>
-            <p><strong>Payment:</strong> Visa 0000</p>
-            <p><strong>Street:</strong> 287 / 2 Boat Street</p>
-            <p><strong>Building:</strong> -</p>
-            <p><strong>Town:</strong> Flapping</p>
-            <p><strong>Post code:</strong> NS9 7JX</p>
+        {/* Billing Details */}
+        <div className="mt-8 border-t border-gray-200">
+          <h2 className="text-sm font-semibold text-black mt-6 mb-2">Billing Details</h2>
+          <div className="border border-gray-200 rounded-md overflow-hidden text-sm">
+            {[
+              ["Name", "Pavlo Sanchez"],
+              ["Payment", "Visa 0000"],
+              ["Street", "287 / 2 Boat Street"],
+              ["Building", "-"],
+              ["Town", "Flapping"],
+              ["Post code", "NS9 7JX"],
+            ].map(([label, value], index, arr) => (
+              <div
+                key={label}
+                className={`flex justify-between px-4 py-3 ${
+                  index !== arr.length - 1 ? "border-b border-gray-200" : ""
+                }`}
+              >
+                <span>{label}</span>
+                <span className="text-black">{value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
+        {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-end gap-3">
-          <button className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-medium">
+          <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100">
             Manage subscriptions
           </button>
-          <button className="bg-purple-600 text-white hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium">
+          <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700">
             New Chat
           </button>
         </div>
