@@ -84,44 +84,71 @@ export default function FaqPage() {
         <Tab.Panels>
           <Tab.Panel>
             <div className="space-y-6">
-              {updates.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={
-                    "flex flex-col md:flex-row items-start gap-4 p-4 bg-white rounded-xl shadow " +
-                    (idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse")
-                  }
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    height={170}
-                    width={150}
-                    className="w-full md:w-64 h-32 object-cover rounded-lg"
-                  />
+            {updates.map((item, idx) => (
+  <div
+    key={idx}
+    className={
+      "flex flex-col md:flex-row items-start gap-4 p-4 bg-white rounded-xl shadow"
+    }
+  >
+    {idx % 2 === 0 ? (
+      // Content First, Image Second
+      <>
+        <div className="flex-1 flex gap-4">
+          <div className="flex flex-col items-start gap-2 w-10">
+            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
+              {item.icon}
+            </div>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
+            <span className="text-xs text-gray-500">{item.date}</span>
+            <p className="text-sm text-gray-600 line-clamp-3">{item.desc}</p>
+            <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
+              Learn More <MdOutlineKeyboardArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
 
-                  <div className="flex-1 flex gap-4">
-                    <div className="flex flex-col items-start gap-2 w-10">
-                     <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
-  {item.icon}
-</div>
+        <Image
+          src={item.image}
+          alt={item.title}
+          height={170}
+          width={150}
+          className="w-full md:w-64 h-32 object-cover rounded-lg"
+        />
+      </>
+    ) : (
+      // Image First, Content Second
+      <>
+        <Image
+          src={item.image}
+          alt={item.title}
+          height={170}
+          width={150}
+          className="w-full md:w-64 h-32 object-cover rounded-lg"
+        />
 
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
-                       <span className="text-xs text-gray-500">{item.date}</span>
-                      <p className="text-sm text-gray-600 line-clamp-3">{item.desc}</p>
-                      <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
-                        Learn More <MdOutlineKeyboardArrowRight className="w-5 h-5" />
-                        
+        <div className="flex-1 flex gap-4">
+          <div className="flex flex-col items-start gap-2 w-10">
+            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
+              {item.icon}
+            </div>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
+            <span className="text-xs text-gray-500">{item.date}</span>
+            <p className="text-sm text-gray-600 line-clamp-3">{item.desc}</p>
+            <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
+              Learn More <MdOutlineKeyboardArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </>
+    )}
+  </div>
+))}
 
-
-
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </Tab.Panel>
          <Tab.Panel>
