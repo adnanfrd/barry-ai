@@ -1,8 +1,11 @@
+import PhotoGenerationPage from '@/components/dashboard/PhotoGeneration'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>photo goes here....</div>
+    <div>
+      <PhotoGenerationPage/>
+    </div>
   )
 }
 
