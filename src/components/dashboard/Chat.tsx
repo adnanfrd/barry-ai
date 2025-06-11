@@ -2,8 +2,16 @@
 'use client';
 
 import { useState } from 'react';
-import { FaPaperPlane, FaPlus, FaBell, FaUserCircle } from 'react-icons/fa';
+import { FaPaperPlane, FaPlus, FaBell, FaUserCircle, FaWineGlass } from 'react-icons/fa';
 import Image from 'next/image';
+import { MdPhotoSizeSelectActual, MdKeyboardVoice } from "react-icons/md";
+import { IoMdVideocam, IoIosCode } from "react-icons/io";
+
+import { BsFillFileEarmarkTextFill } from "react-icons/bs";
+import ChatSidebar from './ChatSidebar';
+
+
+
 
 const messages = [
   {
@@ -37,9 +45,8 @@ export default function ChatsPage() {
   const [input, setInput] = useState('');
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-6">
-      {/* Left Panel */}
-      <div className="bg-white rounded-2xl p-6 shadow-md relative overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-6">
+      <div className="bg-white rounded-2xl p-6 shadow-md min-h-screen relative overflow-y-auto">
         <div className="absolute top-0 left-0 right-0 h-32 bg-[url('/art work.png')] bg-cover bg-center rounded-t-2xl" />
         <div className="relative z-10 mt-20 text-center">
           <div className="flex justify-center">
@@ -55,12 +62,12 @@ export default function ChatsPage() {
 
         <div className="grid grid-cols-3 gap-4 mt-10">
           {[
-            { label: 'Photo Generation', icon: '🖼️' },
-            { label: 'Video Generation', icon: '🎬' },
-            { label: 'Education & Science', icon: '📘' },
-            { label: 'Code Generation', icon: '💻' },
-            { label: 'Voice Tools', icon: '🎤' },
-            { label: 'Text Recognition', icon: '📝' },
+            { label: 'Photo Generation', icon: <MdPhotoSizeSelectActual/> },
+            { label: 'Video Generation', icon: <IoMdVideocam/> },
+            { label: 'Education & Science', icon: <FaWineGlass/> },
+            { label: 'Code Generation', icon: <IoIosCode/> },
+            { label: 'Voice Tools', icon: <MdKeyboardVoice/> },
+            { label: 'Text Recognition', icon: <BsFillFileEarmarkTextFill/> },
           ].map((tool) => (
             <div
               key={tool.label}
@@ -85,9 +92,9 @@ export default function ChatsPage() {
           </button>
         </div>
       </div>
-
+    <ChatSidebar/>
       {/* Right Panel */}
-      <div className="flex flex-col gap-4">
+      {/* <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center">
           <button className="bg-purple-100 text-purple-600 text-sm px-4 py-1.5 rounded-md font-medium flex items-center gap-2">
             <FaPlus /> New Chat
@@ -114,7 +121,7 @@ export default function ChatsPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
