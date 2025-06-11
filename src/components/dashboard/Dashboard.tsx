@@ -14,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
-  { name: "Chats", href: "/dashboard/chats", icon: BsChat },
+  { name: "Chats", href: "/dashboard", icon: BsChat },
   {
     name: "Updates & FAQ",
     href: "/dashboard/updatesfaq",
@@ -85,6 +85,7 @@ export default function Sidebar() {
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           {!collapsed && (
+            <Link href="/dashboard">
             <div className="flex items-center">
               <Image
                 src="/app-icon.png"
@@ -96,6 +97,7 @@ export default function Sidebar() {
                 Fusion <span className="text-purple-600">AI</span>
               </span>
             </div>
+            </Link>
           )}
           <TbLayoutSidebarLeftCollapseFilled
             onClick={toggleSidebar}
