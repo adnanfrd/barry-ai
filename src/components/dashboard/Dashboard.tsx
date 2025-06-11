@@ -4,14 +4,11 @@
 import { usePathname } from "next/navigation";
 import { FaCirclePlus } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { CiSearch } from "react-icons/ci";
 
+import { Input } from "@headlessui/react";
 import Link from "next/link";
 import {
-  FaHome,
-  FaMicrophone,
-  FaVideo,
-  FaCamera,
-  FaBook,
   // FaCode,
   // FaCog,
   FaQuestionCircle,
@@ -20,6 +17,8 @@ import {
   FaUserCog,
   FaCreditCard,
 } from "react-icons/fa";
+import { TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
+
 import Image from "next/image";
 
 const navItems = [
@@ -37,14 +36,25 @@ const navItems = [
   { name: "Settings", href: "/dashboard/settings", icon: FaUserCog },
 ];
 
-const colors = ["#6c6c6c", "#4a90e2", "#4caf50", "#9b59b6", "#d2691e", "#d2691e"];
+const colors = [
+  "#6c6c6c",
+  "#4a90e2",
+  "#4caf50",
+  "#9b59b6",
+  "#d2691e",
+  "#d2691e",
+];
 
 const favorites = [
   { name: "Welcome", href: "/dashboard/welcome", color: colors[0] },
   { name: "Voice Tools", href: "/dashboard/voice", color: colors[1] },
   { name: "Video Generation", href: "/dashboard/video", color: colors[2] },
   { name: "Photo Generation", href: "/dashboard/photo", color: colors[3] },
-  { name: "Education & Science", href: "/dashboard/education", color: colors[4] },
+  {
+    name: "Education & Science",
+    href: "/dashboard/education",
+    color: colors[4],
+  },
   { name: "New list", href: "/dashboard/newlist", icon: FaCirclePlus },
 ];
 
@@ -54,26 +64,34 @@ export default function Sidebar() {
   return (
     <aside className="w-64 shrink-0 bg-white border-r border-gray-200 hidden md:flex flex-col justify-between p-4 shadow-sm">
       <div>
-        <div className="flex items-center mb-6">
-          <div>
-            <Image
-              src="/app-icon.png" // Replace with your image path or URL
-              alt="User Avatar"
-              width={32}
-              height={32}
-              className="object-cover"
-            />
+        <div className="flex justify-between items-center">
+          <div className="flex items-center mb-6">
+            <div>
+              <Image
+                src="/app-icon.png" // Replace with your image path or URL
+                alt="User Avatar"
+                width={32}
+                height={32}
+                className="object-cover"
+              />
+            </div>
+            <span className="ml-2 text-xl font-semibold text-gray-800">
+              Fusion <span className="text-purple-600">AI</span>
+            </span>
           </div>
-          <span className="ml-3 text-xl font-semibold text-gray-800">
-            Fusion <span className="text-purple-600">AI</span>
-          </span>
+          <div>
+            <TbLayoutSidebarLeftCollapseFilled className="h-5 w-5 mb-4.5 text-gray-600 cursor-pointer" />
+          </div>
         </div>
 
-        <input
-          type="text"
-          placeholder="Search"
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm mb-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-        />
+        <div className="relative w-full mb-4">
+          <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-full pl-10 pr-3 py-2 text-sm rounded-md border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
 
         <nav className="mb-6 space-y-1">
           {navItems.map((item) => (
@@ -91,13 +109,13 @@ export default function Sidebar() {
           ))}
         </nav>
 
-       <div className="text-xs gap-2 flex font-semibold text-gray-500 uppercase mb-1">
-  <MdKeyboardArrowDown />
-  <span>Favorites</span>
-</div>
-<div className="space-y-1">
-  {favorites.map((item, index) => (
-     <Link
+        <div className="text-xs gap-2 flex font-semibold text-gray-500 uppercase mb-1">
+          <MdKeyboardArrowDown />
+          <span>Favorites</span>
+        </div>
+        <div className="space-y-1">
+          {favorites.map((item, index) => (
+            <Link
               key={item.name}
               href={item.href}
               className={`flex items-center gap-3 px-2 py-2 rounded-md text-sm font-medium transition-all hover:bg-purple-50 hover:text-purple-600 ${
@@ -116,9 +134,8 @@ export default function Sidebar() {
               )}
               {item.name}
             </Link>
-  ))}
-</div>
-
+          ))}
+        </div>
       </div>
 
       <div className="border-t pt-4">
