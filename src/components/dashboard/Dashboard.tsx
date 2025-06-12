@@ -147,9 +147,9 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => setCollapsed(false)}
-              className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all
-                hover:bg-[#f1eff3] dark:hover:bg-[#333] 
+              // onClick={() => setCollapsed(false)}
+              className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all hover:text-gray-900
+                hover:bg-[#f1eff3] dark:hover:bg-[#333] dark:hover:text-white
                 ${
                   pathname === item.href
                     ? "bg-[#7e4ce0] text-white"
@@ -173,7 +173,7 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => setCollapsed(false)}
+              // onClick={() => setCollapsed(false)}
               className={`flex items-center gap-3 px-2 py-2 rounded-md text-sm font-medium transition-all 
                 hover:bg-[#f1eff3] dark:hover:bg-[#333] 
                 ${
@@ -202,7 +202,7 @@ export default function Sidebar() {
       </div>
 
       {/* Footer */}
-      <div>
+      <div className="py-2">
         {collapsed ? (
           <div className="flex justify-center mb-4">
             <Image
