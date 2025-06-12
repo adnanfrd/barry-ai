@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Button,
-  Menu,
-  Popover,
-  MenuItem,
-  MenuItems,
-  MenuButton,
-} from "@headlessui/react";
+import { Button, Menu, Popover } from "@headlessui/react";
 import Image from "next/image";
 import { FaEdit, FaSignOutAlt } from "react-icons/fa";
 import { RiChatNewLine } from "react-icons/ri";
