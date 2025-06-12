@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { IoIosClose } from 'react-icons/io';
 
 const applications = [
@@ -31,9 +32,11 @@ export default function ApplicationsPage() {
     <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
       <div className="flex p-2 justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Applications</h1>
-        <button className="bg-purple-600 rounded-xl hover:bg-purple-700 text-white px-4 py-2 text-sm font-medium">
+        <Link href="/dashboard/addapplications">
+        <button className="bg-purple-600 cursor-pointer rounded-xl hover:bg-purple-700 text-white px-4 py-2 text-sm font-medium">
           Add More Apps
         </button>
+        </Link>
       </div>
       <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 
