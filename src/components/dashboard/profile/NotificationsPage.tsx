@@ -25,7 +25,7 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="p-2 h-screen bg-white sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-xl bg-white sm:p-4 max-w-4xl mx-auto w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-black">Notifications</h1>

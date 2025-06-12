@@ -14,21 +14,21 @@ export default function PasswordPage() {
   const [showConfirm, setShowConfirm] = useState(false);
 
   return (
-    <div className="p-2 h-screen bg-white sm:p-4 max-w-4xl mx-auto w-full">
-      <h1 className="text-2xl px-4 py-2 font-bold mb-6">Password</h1>
-            <hr className="mb-6 text-gray-200" /> 
-      <div className=" rounded-2xl p-6 sm:p-4 space-y-6 ">
+    <div className="p-2 h-screen bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
+      <h1 className="text-2xl px-4 py-2 font-bold mb-6 text-black dark:text-white">Password</h1>
+      <hr className="mb-6 border-gray-200 dark:border-gray-700" />
+      <div className="rounded-2xl p-6 sm:p-4 space-y-6">
 
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">Current Password</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-200 block mb-1">Current Password</label>
           <div className="relative">
-            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer" />
+            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 cursor-pointer" />
             <input
               type={showCurrent ? 'text' : 'password'}
               value={currentPassword}
               placeholder='*****************'
               onChange={(e) => setCurrentPassword(e.target.value)}
-              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 dark:border-gray-600 dark:bg-[#36343b] dark:text-white rounded-md focus:ring-purple-500 focus:border-purple-500"
             />
             <button
               type="button"
@@ -42,14 +42,14 @@ export default function PasswordPage() {
 
         {/* New Password */}
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">New password</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-200 block mb-1">New password</label>
           <div className="relative">
-            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer" />
+            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 cursor-pointer" />
             <input
               type={showNew ? 'text' : 'password'}
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 dark:border-gray-600 dark:bg-[#36343b] dark:text-white rounded-md focus:ring-purple-500 focus:border-purple-500"
               placeholder="Placeholder"
             />
             <button
@@ -60,19 +60,19 @@ export default function PasswordPage() {
               {showNew ? <HiEyeOff /> : <HiEye />}
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Minimum 8 characters</p>
         </div>
 
         {/* Confirm New Password */}
         <div>
-          <label className="text-sm font-medium text-gray-700 block mb-1">Confirm new password</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-200 block mb-1">Confirm new password</label>
           <div className="relative">
-            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer" />
+            <IoKeyOutline className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 cursor-pointer" />
             <input
               type={showConfirm ? 'text' : 'password'}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 rounded-md focus:ring-purple-500 focus:border-purple-500"
+              className="w-full pl-10 pr-10 py-2 border focus:outline-none border-gray-300 dark:border-gray-600 dark:bg-[#36343b] dark:text-white rounded-md focus:ring-purple-500 focus:border-purple-500"
               placeholder="Placeholder"
             />
             <button
@@ -83,7 +83,7 @@ export default function PasswordPage() {
               {showConfirm ? <HiEyeOff /> : <HiEye />}
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Minimum 8 characters</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Minimum 8 characters</p>
         </div>
 
         {/* Reset Button */}
