@@ -15,11 +15,7 @@ import {
   SiInvision,
 } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
-import { FiPlusCircle, FiInfo  } from "react-icons/fi";
-
-
-import { FaInfoCircle } from "react-icons/fa";
-
+import { FiPlusCircle, FiInfo } from "react-icons/fi";
 const apps = [
   {
     name: "Telegram",
@@ -67,7 +63,7 @@ const apps = [
     name: "Figma",
     icon: IoLogoFigma,
     desc: "Polygon overflow slice variant",
-    color: "text-[#a259ff]",
+    gradient: "from-[#f24e1e] via-[#a259ff] to-[#1abcfe]",
     added: false,
   },
   {
@@ -125,7 +121,13 @@ const AddApplications = () => {
             className="border border-none dark:border-gray-700 rounded-xl p-4 flex flex-col gap-3 justify-between bg-[#f6f5f8] dark:bg-[#302d35]"
           >
             <div className="flex items-center gap-3">
-              <div className={`text-2xl p-2 rounded-full bg-white shadow ${app.color}`}>
+              <div
+                className={`text-2xl p-2 rounded-full bg-white shadow ${
+                  app.name === "Figma"
+                    ? "bg-gradient-to-br from-[#f24e1e] via-[#a259ff] to-[#1abcfe] text-white"
+                    : app.color
+                }`}
+              >
                 <app.icon />
               </div>
               <div>
@@ -138,7 +140,7 @@ const AddApplications = () => {
               </div>
             </div>
             <div className="flex items-center justify-start gap-2">
-              <FiInfo  className="text-purple-400" />
+              <FiInfo className="text-purple-400" />
               <button
                 disabled={app.added}
                 className={`flex items-center gap-1 w-full justify-center text-sm px-4 py-1.5 rounded-md border transition ${
@@ -151,7 +153,7 @@ const AddApplications = () => {
                   "✓ Added"
                 ) : (
                   <>
-                    <FiPlusCircle className="text-xs mr-1"  />
+                    <FiPlusCircle className="text-xs mr-1" />
                     Add
                   </>
                 )}
