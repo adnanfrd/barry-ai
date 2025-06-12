@@ -7,9 +7,9 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 const themes = ["Light", "Dark", "System"];
 const languages = [
-  { name: "English / UK", flag: "/video.png" },
-  { name: "English / US", flag: "/video.png" },
-  { name: "French", flag: "/video.png" },
+  { name: "English / UK", flag: "/united-kingdom.png" },
+  { name: "English / US", flag: "/united-states.png" },
+  { name: "French", flag: "/france.png" },
 ];
 
 export default function AppearancePage() {

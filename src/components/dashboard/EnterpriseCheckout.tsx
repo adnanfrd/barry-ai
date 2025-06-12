@@ -5,13 +5,12 @@ import { FaCheckCircle } from "react-icons/fa";
 import { HiSelector } from "react-icons/hi";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const currencies = [
-  { code: "USD", label: "US Dollar", flag: "🇺🇸" },
-  { code: "GBP", label: "British Pound", flag: "🇬🇧" },
-  { code: "EUR", label: "Euro", flag: "🇪🇺" },
-  { code: "JPY", label: "Japanese Yen", flag: "🇯🇵" },
-  { code: "CAD", label: "Canadian Dollar", flag: "🇨🇦" },
+  { code: "USD", flag: "/united-states.png" },
+  { code: "GBP", flag: "/united-kingdom.png" },
+  { code: "EUR", flag: "/france.png" },
 ];
 
 const features = [
@@ -44,28 +43,33 @@ export default function EnterpriseCheckout() {
 
         <Listbox value={selectedCurrency} onChange={setSelectedCurrency}>
           <div className="relative">
-            <Listbox.Button className="border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm rounded-lg flex items-center gap-2 min-w-[150px] bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
+            <Listbox.Button className="border outline-none border-gray-300 dark:border-gray-700 px-4 py-2 text-sm rounded-lg flex items-center gap-2 min-w-[150px] bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200">
               Currency{" "}
               <span className="font-medium">{selectedCurrency.code}</span>
-              <HiSelector className="ml-auto w-4 h-4 text-gray-400 dark:text-gray-300" />
+              <HiSelector className="ml-auto outline-none w-4 h-4 text-gray-400 dark:text-gray-300" />
             </Listbox.Button>
-            <Listbox.Options className="absolute mt-1 w-full bg-white dark:bg-[#302e34] border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-10 overflow-hidden">
+            <Listbox.Options className="absolute outline-none mt-1 w-full bg-white dark:bg-[#302e34] border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-10 overflow-hidden">
               {currencies.map((currency) => (
                 <Listbox.Option
                   key={currency.code}
                   value={currency}
                   className={({ active }) =>
-                    `cursor-pointer flex items-center px-4 py-2 text-sm ${
+                    `cursor-pointer flex items-center px-4 outline-none py-2 text-sm ${
                       active
-                        ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
-                        : "text-gray-700 dark:text-gray-300"
+                        ? "bg-purple-100 outline-none text-purple-700 dark:bg-purple-900 dark:text-purple-300"
+                        : "text-gray-700 outline-none dark:text-gray-300"
                     }`
                   }
                 >
-                  <span className="text-lg mr-2">{currency.flag}</span>
+                  <Image
+                    src={currency.flag}
+                    alt={` flag`}
+                    width={20}
+                    height={14}
+                    className="mr-2 rounded-sm"
+                  />
                   {currency.code}{" "}
                   <span className="ml-2 text-gray-500 dark:text-gray-400">
-                    {currency.label}
                   </span>
                 </Listbox.Option>
               ))}
