@@ -27,14 +27,16 @@ const plans = [
 export default function CompareFeatures() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-12 font-poppins">
-      <h2 className="text-lg font-semibold mb-6">Compare Features</h2>
+      <h2 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">
+        Compare Features
+      </h2>
       <div className="overflow-auto">
-        <table className="w-full text-sm border-separate border-spacing-y-1">
+        <table className="w-full text-sm border-separate border-spacing-y-1 ">
           <tbody>
             {features.map((feature, rowIdx) => (
               <tr key={rowIdx}>
                 {/* Feature label */}
-                <td className="py-4 pr-4 whitespace-nowrap text-black font-medium align-top">
+                <td className="py-4 pr-4 whitespace-nowrap text-black dark:text-white font-medium align-top">
                   {feature}
                 </td>
 
@@ -42,12 +44,12 @@ export default function CompareFeatures() {
                 {plans[rowIdx].map((enabled, colIdx) => (
                   <td
                     key={colIdx}
-                    className="text-center bg-[#f6f5f9] py-4 rounded-lg text-black min-w-[80px]"
+                    className="text-center bg-[#f6f5f9] dark:bg-[#2c292f]  py-4 rounded-lg text-black dark:text-white min-w-[80px]"
                   >
                     {enabled ? (
                       <FaCheck className="text-green-600 inline-block" />
                     ) : (
-                      <span className="text-gray-400">✕</span>
+                      <span className="text-gray-400 dark:text-gray-600">✕</span>
                     )}
                   </td>
                 ))}

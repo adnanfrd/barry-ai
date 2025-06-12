@@ -22,7 +22,7 @@ const updates = [
     date: "26 May, 2025",
     desc: "Microsoft Timeline, a released feature that allowed users to revisit daily workflow through visual records, is making a comeback with AI recommendations.",
     image: "/updates2.png",
-    icon: <LuClock className="text-teal-600 text-lg" />, 
+    icon: <LuClock className="text-teal-600 text-lg" />,
   },
   {
     title: "Google Immersive View with Maps",
@@ -55,141 +55,150 @@ function classNames(...classes: string[]) {
 
 export default function FaqPage() {
   return (
-    <div className="w-full bg-white p-4 rounded-xl max-w-5xl mx-auto px-4 font-poppins">
-      <h1 className="text-2xl font-bold mb-1">Updates & FAQ</h1>
-      <p className="text-sm text-gray-500 mb-6">
+    <div className="w-full bg-white dark:bg-[#232127] p-4 rounded-xl max-w-5xl mx-auto px-4 font-poppins">
+      <h1 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">Updates & FAQ</h1>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
         Enhancements, Resolutions & Upgrades
       </p>
 
       <Tab.Group>
-        <Tab.List className="flex space-x-6 border-b border-gray-200">
-  {["Updates", "FAQ"].map((tab) => (
-    <Tab
-      key={tab}
-      className={({ selected }) =>
-        classNames(
-          "relative pb-2 text-sm font-semibold cursor-pointer focus:outline-none",
-          selected
-            ? "text-purple-600 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:w-4 after:h-1 after:rounded-full after:bg-purple-600"
-            : "text-gray-700"
-        )
-      }
-    >
-      {tab}
-    </Tab>
-  ))}
-</Tab.List>
-
+        <Tab.List className="flex space-x-6 mb-4 border-b border-gray-200 dark:border-gray-700">
+          {["Updates", "FAQ"].map((tab) => (
+            <Tab
+              key={tab}
+              className={({ selected }) =>
+                classNames(
+                  "relative pb-2 text-sm font-semibold cursor-pointer focus:outline-none",
+                  selected
+                    ? "text-purple-600 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:w-4 after:h-1 after:rounded-full after:bg-purple-600"
+                    : "text-gray-700 dark:text-gray-300"
+                )
+              }
+            >
+              {tab}
+            </Tab>
+          ))}
+        </Tab.List>
 
         <Tab.Panels>
           <Tab.Panel>
             <div className="space-y-6">
-            {updates.map((item, idx) => (
-  <div
-    key={idx}
-    className={
-      "flex flex-col md:flex-row items-start gap-4 p-4 bg-white rounded-xl shadow"
-    }
-  >
-    {idx % 2 === 0 ? (
-      // Content First, Image Second
-      <>
-        <div className="flex-1 flex gap-4">
-          <div className="flex flex-col items-start gap-2 w-10">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
-              {item.icon}
-            </div>
-          </div>
-          <div className="space-y-2">
-            <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
-            <span className="text-xs text-gray-500">{item.date}</span>
-            <p className="text-sm text-gray-600 line-clamp-3">{item.desc}</p>
-            <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
-              Learn More <MdOutlineKeyboardArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+              {updates.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col md:flex-row items-start border-b border-gray-400 gap-4 p-4 bg-white dark:bg-[#232127] rounded-xl shadow"
+                >
+                  {idx % 2 === 0 ? (
+                    <>
+                      <div className="flex-1 flex gap-4">
+                        <div className="flex flex-col items-start gap-2 w-10">
+                          <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
+                            {item.icon}
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
+                            {item.title}
+                          </h3>
+                          <span className="text-xs text-gray-500 dark:text-gray-400">
+                            {item.date}
+                          </span>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                            {item.desc}
+                          </p>
+                          <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
+                            Learn More{" "}
+                            <MdOutlineKeyboardArrowRight className="w-5 h-5" />
+                          </button>
+                        </div>
+                      </div>
 
-        <Image
-          src={item.image}
-          alt={item.title}
-          height={170}
-          width={150}
-          className="w-full md:w-64 h-32 object-cover rounded-lg"
-        />
-      </>
-    ) : (
-      // Image First, Content Second
-      <>
-        <Image
-          src={item.image}
-          alt={item.title}
-          height={170}
-          width={150}
-          className="w-full md:w-64 h-32 object-cover rounded-lg"
-        />
-
-        <div className="flex-1 flex gap-4">
-          <div className="flex flex-col items-start gap-2 w-10">
-            <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
-              {item.icon}
-            </div>
-          </div>
-          <div className="space-y-2">
-            <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
-            <span className="text-xs text-gray-500">{item.date}</span>
-            <p className="text-sm text-gray-600 line-clamp-3">{item.desc}</p>
-            <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
-              Learn More <MdOutlineKeyboardArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </>
-    )}
-  </div>
-))}
-
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        height={170}
+                        width={150}
+                        className="w-full md:w-64 h-32 object-cover rounded-lg"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        height={170}
+                        width={150}
+                        className="w-full md:w-64 h-32 object-cover rounded-lg"
+                      />
+                      <div className="flex-1 flex gap-4">
+                        <div className="flex flex-col items-start gap-2 w-10">
+                          <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-teal-100 to-blue-100 rounded-lg">
+                            {item.icon}
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
+                            {item.title}
+                          </h3>
+                          <span className="text-xs text-gray-500 dark:text-gray-400">
+                            {item.date}
+                          </span>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                            {item.desc}
+                          </p>
+                          <button className="text-purple-600 text-sm font-medium flex items-center gap-1">
+                            Learn More{" "}
+                            <MdOutlineKeyboardArrowRight className="w-5 h-5" />
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
             </div>
           </Tab.Panel>
-         <Tab.Panel>
-  <div className="bg-white rounded-xl shadow p-4">
-    <div className="divide-y divide-gray-200">
-      {faqs.map((faq, index) => (
-        <Disclosure
-          key={index}
-          as="div"
-          className="py-5" // Increased spacing
-          defaultOpen={index === 0} // First item open by default
-        >
-          {({ open }) => (
-            <>
-              <Disclosure.Button className="flex justify-between items-center w-full text-left">
-                <span className="text-[15px] font-medium text-gray-700"> {/* Slightly larger text */}
-                  {faq}
-                </span>
-                <FaChevronDown
-                  className={classNames(
-                    "w-4 h-4 text-gray-500 transition-transform",
-                    open ? "rotate-180 text-purple-600" : ""
-                  )}
-                />
-              </Disclosure.Button>
-              <Disclosure.Panel className="pt-3 text-sm text-gray-500">
-                Distribute ellipse outline main arrow underline. Device move
-                polygon pen undo selection layer thumbnail union italic. Outline
-                pixel bold opacity content scale undo editor link content. Bold
-                figma hand variant component. Star figjam hand ipsum distribute
-                select text. Prototype rectangle main outline blur vertical
-                variant link undo. Asset align list draft ellipse subtract font.
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
-      ))}
-    </div>
-  </div>
-</Tab.Panel>
 
+          <Tab.Panel>
+            <div className="bg-white dark:bg-[#232127] rounded-xl shadow p-4">
+              <div className="divide-y divide-gray-400">
+                {faqs.map((faq, index) => (
+                  <Disclosure
+                    key={index}
+                    as="div"
+                    className="py-5"
+                    defaultOpen={index === 0}
+                  >
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className="flex justify-between items-center w-full text-left">
+                          <span className="text-[15px] font-medium text-gray-700 dark:text-gray-300">
+                            {faq}
+                          </span>
+                          <FaChevronDown
+                            className={classNames(
+                              "w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform",
+                              open ? "rotate-180 text-purple-600" : ""
+                            )}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="pt-3 text-sm text-gray-500 dark:text-gray-400">
+                          Distribute ellipse outline main arrow underline.
+                          Device move polygon pen undo selection layer thumbnail
+                          union italic. Outline pixel bold opacity content scale
+                          undo editor link content. Bold figma hand variant
+                          component. Star figjam hand ipsum distribute select
+                          text. Prototype rectangle main outline blur vertical
+                          variant link undo. Asset align list draft ellipse
+                          subtract font.
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                ))}
+              </div>
+            </div>
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>

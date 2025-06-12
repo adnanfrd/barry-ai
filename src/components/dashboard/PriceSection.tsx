@@ -46,27 +46,43 @@ const plans = [
 ];
 
 export default function PricingSection() {
-     const router = useRouter();
+  const router = useRouter();
 
-  const handleClick = () =>{
-router.push('/dashboard/checkout')
-}
+  const handleClick = () => {
+    router.push("/dashboard/checkout");
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-2 font-poppins">
-      <h2 className="text-2xl font-bold mb-1">Cost-Effective AI Chat Services</h2>
-      <p className="text-sm text-gray-500 mb-6">Budget-Friendly Pricing Options</p>
+      <h2 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">
+        Cost-Effective AI Chat Services
+      </h2>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        Budget-Friendly Pricing Options
+      </p>
 
-<div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 mb-8">
         {/* Left Side: Billing Toggle */}
         <div className="mb-6 md:mb-0">
-          <h3 className="font-semibold text-sm mb-4">Choose Plan</h3>
+          <h3 className="font-semibold text-sm mb-4 text-gray-900 dark:text-white">
+            Choose Plan
+          </h3>
           <div className="space-y-3">
-            <label className="flex items-center gap-2 text-sm">
-              <input type="radio" name="billing" defaultChecked className="accent-purple-600" />
+            <label className="flex items-center gap-2 text-sm text-gray-800 dark:text-gray-300">
+              <input
+                type="radio"
+                name="billing"
+                defaultChecked
+                className="accent-purple-600"
+              />
               <span>Yearly billing</span>
             </label>
-            <label className="flex items-center gap-2 text-sm">
-              <input type="radio" name="billing" className="accent-purple-600" />
+            <label className="flex items-center gap-2 text-sm text-gray-800 dark:text-gray-300">
+              <input
+                type="radio"
+                name="billing"
+                className="accent-purple-600"
+              />
               <span>Monthly billing</span>
             </label>
           </div>
@@ -77,8 +93,10 @@ router.push('/dashboard/checkout')
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative p-5 rounded-2xl border border-gray-300 ${
-                plan.featured ? "bg-purple-600 text-white scale-110 " : "bg-[#f1f0f3] text-gray-800"
+              className={`relative p-5 rounded-2xl border ${
+                plan.featured
+                  ? "bg-purple-600 text-white scale-110 border-purple-600"
+                  : "bg-[#f1f0f3] dark:bg-[#2c292f] text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               }`}
             >
               {/* Badge */}
@@ -111,15 +129,16 @@ router.push('/dashboard/checkout')
 
               {/* Button */}
               {plan.current ? (
-                <button className="bg-gray-200 text-gray-500 px-4 py-2 rounded-md text-sm font-medium w-full cursor-default">
+                <button className="bg-gray-200 dark:bg-gray-600 text-gray-500 px-4 py-2 rounded-md text-sm font-medium w-full cursor-default">
                   Current plan
                 </button>
               ) : (
-                <button onClick={handleClick}
+                <button
+                  onClick={handleClick}
                   className={`px-4 py-2 rounded-md cursor-pointer text-sm font-semibold w-full ${
                     plan.featured
                       ? "bg-white text-purple-600"
-                      : "bg-white text-pirple-600"
+                      : "bg-white dark:bg-gray-100 text-purple-600"
                   }`}
                 >
                   Upgrade

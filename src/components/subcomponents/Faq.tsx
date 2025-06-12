@@ -19,8 +19,8 @@ function classNames(...classes: string[]) {
 
 export default function FaqAccordion() {
   return (
-    <div className="bg-white rounded-xl shadow p-4">
-      <div className="divide-y divide-gray-200">
+    <div className="bg-white dark:bg-[#2c292f] rounded-xl shadow p-4">
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
         {faqs.map((faq, index) => (
           <Disclosure
             key={index}
@@ -31,17 +31,17 @@ export default function FaqAccordion() {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex justify-between items-center w-full text-left">
-                  <span className="text-[15px] font-medium text-gray-700">
+                  <span className="text-[15px] font-medium text-gray-700 dark:text-gray-200">
                     {faq}
                   </span>
                   <FaChevronDown
                     className={classNames(
-                      "w-4 h-4 text-gray-500 transition-transform",
+                      "w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform",
                       open ? "rotate-180 text-purple-600" : ""
                     )}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="pt-3 text-sm text-gray-500">
+                <Disclosure.Panel className="pt-3 text-sm text-gray-500 dark:text-gray-400">
                   Distribute ellipse outline main arrow underline. Device move
                   polygon pen undo selection layer thumbnail union italic.
                   Outline pixel bold opacity content scale undo editor link
