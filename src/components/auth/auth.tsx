@@ -2,7 +2,6 @@
 
 import { Tab } from "@headlessui/react";
 import {
-  FaGoogle,
   FaApple,
   FaEnvelope,
   FaRegQuestionCircle,
@@ -12,12 +11,14 @@ import {
 import Image from "next/image";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const AuthPage = () => {
-    const router = useRouter();
- const handleClick = () =>{
-    router.push('/dashboard')
- }
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/dashboard");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden px-4 font-poppins">
       {/* Background Image */}
@@ -30,7 +31,7 @@ const AuthPage = () => {
       />
 
       {/* Auth Card */}
-      <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-[33%] bg-white/90 dark:bg-gray-900/90 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-sm">
+      <div className="relative z-10 w-full max-w-md sm:max-w-lg md:max-w-[33%] bg-white/90 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-sm">
         {/* Logo */}
         <div className="flex justify-center items-center mb-6">
           <Image
@@ -39,14 +40,14 @@ const AuthPage = () => {
             width={40}
             height={40}
           />
-          <span className="ml-2 text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white">
+          <span className="ml-2 text-xl mb-2 sm:text-2xl font-semibold text-gray-800">
             Fusion <span className="text-purple-500">AI</span>
           </span>
         </div>
 
         {/* Tabs */}
         <Tab.Group>
-          <Tab.List className="flex space-x-1 bg-gray-100 rounded-xl p-1 mb-4">
+          <Tab.List className="flex space-x-1 border border-gray-300  bg-gray-100 rounded-xl mb-4">
             {["Sign Up", "Create Account"].map((tab) => (
               <Tab
                 key={tab}
@@ -54,7 +55,7 @@ const AuthPage = () => {
                   clsx(
                     "w-full py-2 text-xs sm:text-sm font-medium rounded-lg focus:outline-none",
                     selected
-                      ? "bg-white/100 shadow border border-purple-500"
+                      ? "bg-white/100 text-gray-700 shadow border border-gray-300"
                       : "text-gray-700 hover:bg-gray-200"
                   )
                 }
@@ -68,36 +69,45 @@ const AuthPage = () => {
             {/* Sign In */}
             <Tab.Panel>
               <form className="space-y-4">
-                <div className="border border-gray-300 bg-white p-4 rounded-xl hover:border-purple-500 shadow">
-                  {/* Email Input */}
-                  <label className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <div className="mt-1 relative">
-                    <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400" />
-                    <input
-                      type="email"
-                      placeholder="Enter valid email address"
-                      className="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    />
+                <div className="w-full max-w-md rounded-xl border border-gray-200 shadow-sm overflow-hidden bg-white font-poppins">
+                  {/* Email */}
+                  <div className="flex items-start gap-3 px-4 py-4">
+                    <div className="p-2 bg-red-50 rounded-md">
+                      <FaEnvelope className="text-[#A07AAB] w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="text-sm font-medium text-gray-800 mb-0.5">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="Enter valid email address"
+                        className="text-sm placeholder-gray-400 outline-none border-none focus:ring-0 p-0"
+                      />
+                    </div>
                   </div>
 
-                  {/* Password Input */}
-                  <label className="block text-sm font-medium text-gray-700 mt-4">
-                    Password
-                  </label>
-                  <div className="mt-1 relative">
-                    <FaKey className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400" />
-                    <input
-                      type="password"
-                      placeholder="***************"
-                      className="pl-10 pr-10 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
-                    >
-                      <FaEye className="text-purple-500" />
+                  <div className="border-t border-gray-200" />
+
+                  {/* Password */}
+                  <div className="flex items-start justify-between px-4 py-4">
+                    <div className="flex gap-3">
+                      <div className="px-2 py-2 bg-red-50 rounded-md">
+                        <FaKey className="text-[#A07AAB] w-4 h-4" />
+                      </div>
+                      <div className="flex flex-col">
+                        <label className="text-sm font-medium text-gray-800 mb-0.5">
+                          Password
+                        </label>
+                        <input
+                          type="password"
+                          placeholder="At least 8 character length"
+                          className="text-sm placeholder-gray-400 outline-none border-none focus:ring-0 p-0"
+                        />
+                      </div>
+                    </div>
+                    <button className="text-purple-500">
+                      <FaEye className="w-4 h-4 mt-1" />
                     </button>
                   </div>
                 </div>
@@ -125,36 +135,45 @@ const AuthPage = () => {
             {/* Sign Up */}
             <Tab.Panel>
               <form className="space-y-4">
-                <div className="border border-gray-300 bg-white p-4 rounded-xl hover:border-purple-500 shadow">
-                  {/* Email Input */}
-                  <label className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <div className="mt-1 relative">
-                    <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400" />
-                    <input
-                      type="email"
-                      placeholder="Enter valid email address"
-                      className="pl-10 pr-3 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    />
+               <div className="w-full max-w-md rounded-xl border border-gray-200 shadow-sm overflow-hidden bg-white font-poppins">
+                  {/* Email */}
+                  <div className="flex items-start gap-3 px-4 py-4">
+                    <div className="p-2 bg-red-50 rounded-md">
+                      <FaEnvelope className="text-[#A07AAB] w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="text-sm font-medium text-gray-800 mb-0.5">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="Enter valid email address"
+                        className="text-sm placeholder-gray-400 outline-none border-none focus:ring-0 p-0"
+                      />
+                    </div>
                   </div>
 
-                  {/* Password Input */}
-                  <label className="block text-sm font-medium text-gray-700 mt-4">
-                    Password
-                  </label>
-                  <div className="mt-1 relative">
-                    <FaKey className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400" />
-                    <input
-                      type="password"
-                      placeholder="At least 8 characters length"
-                      className="pl-10 pr-10 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    />
-                    <button
-                      type="button"
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
-                    >
-                      <FaEye className="text-purple-500" />
+                  <div className="border-t border-gray-200" />
+
+                  {/* Password */}
+                  <div className="flex items-start justify-between px-4 py-4">
+                    <div className="flex gap-3">
+                      <div className="px-2 py-2 bg-red-50 rounded-md">
+                        <FaKey className="text-[#A07AAB] w-4 h-4" />
+                      </div>
+                      <div className="flex flex-col">
+                        <label className="text-sm font-medium text-gray-800 mb-0.5">
+                          Password
+                        </label>
+                        <input
+                          type="password"
+                          placeholder="At least 8 character length"
+                          className="text-sm placeholder-gray-400 outline-none border-none focus:ring-0 p-0"
+                        />
+                      </div>
+                    </div>
+                    <button className="text-purple-500">
+                      <FaEye className="w-4 h-4 mt-1" />
                     </button>
                   </div>
                 </div>
@@ -184,11 +203,11 @@ const AuthPage = () => {
 
         {/* Social Logins */}
         <div className="space-y-2">
-          <button className="w-full flex items-center justify-center border border-gray-300 rounded-md py-2 hover:bg-gray-100 transition text-sm">
+          <button className="w-full flex text-gray-900 items-center justify-center border border-gray-300 rounded-md py-2 hover:bg-gray-100 transition text-sm">
             <FaApple className="mr-2" /> Continue with Apple
           </button>
-          <button className="w-full flex items-center justify-center border border-gray-300 rounded-md py-2 hover:bg-gray-100 transition text-sm">
-            <FaGoogle className="mr-2 text-red-500" /> Continue with Google
+          <button className="w-full flex text-gray-900 items-center justify-center border border-gray-300 rounded-md py-2 hover:bg-gray-100 transition text-sm">
+            <FcGoogle className="mr-2 text-red-500" /> Continue with Google
           </button>
         </div>
       </div>

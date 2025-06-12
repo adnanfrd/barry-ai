@@ -29,7 +29,12 @@ const navItems = [
 ];
 
 const favorites = [
-  { name: "Welcome", href: "/dashboard/welcome", color: "#6c6c6c", count: 1 },
+  {
+    name: "Welcome",
+    href: "/dashboard/welcome",
+    color: "#6c6c6c",
+    count: 1,
+  },
   {
     name: "Voice Tools",
     href: "/dashboard/voice",
@@ -66,7 +71,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
-  const {setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
