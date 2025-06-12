@@ -15,7 +15,6 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-// Optional: Title map
 const titleMap: Record<string, string> = {
   code: 'Code Generation',
   education: 'Education and Science',
@@ -39,12 +38,12 @@ export default function Header() {
   const title = titleMap[pageKey] || 'Chat';
 
   return (
-    <div className="relative w-full border-b border-[#f5f5f5] px-4 py-4 bg-white rounded-t-2xl shadow-sm border-b border-gray-200 flex items-center justify-between">
-      <h2 className="text-lg font-bold text-black z-10">{title}</h2>
+    <div className="relative w-full border-b px-4 py-4 bg-white dark:bg-[#232127] rounded-t-2xl shadow-sm border-gray-200 dark:border-gray-700 flex items-center justify-between">
+      <h2 className="text-lg font-bold text-black dark:text-white z-10">{title}</h2>
 
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-          <Tab.List className="flex items-center outline-none bg-[#f3f3f6] rounded-xl px-1 py-0.5 text-sm font-medium text-gray-600 space-x-1">
+          <Tab.List className="flex items-center outline-none bg-[#f3f3f6] dark:bg-[#2a2a2e] rounded-xl px-1 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 space-x-1">
             {tabs.map((tab, index) => (
               <Tab
                 key={index}
@@ -52,8 +51,8 @@ export default function Header() {
                   classNames(
                     'px-3 py-1 rounded-lg outline-none transition',
                     selected
-                      ? 'bg-white text-black shadow-sm'
-                      : 'text-gray-500 hover:text-black'
+                      ? 'bg-white dark:bg-[#3a3a3f] text-black dark:text-white shadow-sm'
+                      : 'text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white'
                   )
                 }
               >
@@ -64,14 +63,14 @@ export default function Header() {
         </Tab.Group>
       </div>
 
-      <div className="flex items-center gap-4 text-gray-700 z-10">
-        <button className="hover:text-black transition">
+      <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300 z-10">
+        <button className="hover:text-black dark:hover:text-white transition">
           <HiOutlineStar className="w-5 h-5" />
         </button>
-        <button className="hover:text-black transition">
+        <button className="hover:text-black dark:hover:text-white transition">
           <FiUpload className="w-5 h-5" />
         </button>
-        <button className="hover:text-black transition">
+        <button className="hover:text-black dark:hover:text-white transition">
           <HiOutlineDotsVertical className="w-5 h-5" />
         </button>
       </div>
