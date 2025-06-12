@@ -25,17 +25,17 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="p-2 h-screen rounded-xl bg-white sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-black">Notifications</h1>
+        <h1 className="text-2xl font-bold text-black dark:text-white">Notifications</h1>
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-700">On</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">On</span>
           <Switch
             checked={enabled}
             onChange={setEnabled}
             className={classNames(
-              enabled ? 'bg-purple-600' : 'bg-gray-300',
+              enabled ? 'bg-purple-600' : 'bg-gray-300 dark:bg-gray-600',
               'relative inline-flex h-6 w-11 items-center rounded-full transition-colors'
             )}
           >
@@ -49,33 +49,32 @@ export default function NotificationsPage() {
         </div>
       </div>
 
-      <hr className="mb-6 border-gray-200" />
+      <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 
       {/* Email Box */}
-      <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="bg-gray-50 dark:bg-[#302d35] border border-gray-200 dark:border-gray-700 rounded-xl p-4 mb-6">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Preferred email
         </label>
         <div className="flex items-stretch gap-3">
-  {/* Email Input */}
-  <div className="relative w-[35%]">
-    <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-300" />
-    <input
-      type="email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      placeholder="Placeholder"
-      className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 h-full"
-    />
-  </div>
+          {/* Email Input */}
+          <div className="relative w-[35%]">
+            <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-300" />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Placeholder"
+              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 h-full"
+            />
+          </div>
 
-  {/* Add New Email Button */}
-  <button className="w-[40%] px-4 py-2 flex items-center justify-center text-purple-600 text-sm font-medium border border-transparent rounded-md">
-    <BiPlusCircle className="mr-2 text-base" />
-    Add new email
-  </button>
-</div>
-
+          {/* Add New Email Button */}
+          <button className="w-[40%] px-4 py-2 flex cursor-pointer hover:bg-gray-500 items-center justify-center text-purple-600 dark:text-purple-400 text-sm font-medium border border-transparent rounded-md">
+            <BiPlusCircle className="mr-2 text-base" />
+            Add new email
+          </button>
+        </div>
       </div>
 
       {/* Notification Toggles */}
@@ -120,7 +119,7 @@ export default function NotificationsPage() {
                 className={classNames(
                   notifications[item.key as keyof typeof notifications]
                     ? 'bg-purple-600'
-                    : 'bg-gray-300',
+                    : 'bg-gray-300 dark:bg-gray-600',
                   'relative inline-flex h-6 w-11 items-center rounded-full transition-colors mt-1'
                 )}
               >
@@ -134,10 +133,10 @@ export default function NotificationsPage() {
                 />
               </Switch>
               <div>
-                <p className="font-semibold text-sm text-gray-800">
+                <p className="font-semibold text-sm text-gray-800 dark:text-gray-100">
                   {item.label}
                 </p>
-                <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{item.desc}</p>
               </div>
             </div>
           </div>
@@ -149,7 +148,7 @@ export default function NotificationsPage() {
         <button className="bg-purple-600 text-white text-sm px-6 py-2 rounded-md hover:bg-purple-700">
           Save
         </button>
-        <button className="text-purple-600 text-sm font-medium hover:underline">
+        <button className="text-purple-600 dark:text-purple-400 text-sm font-medium">
           Cancel
         </button>
       </div>

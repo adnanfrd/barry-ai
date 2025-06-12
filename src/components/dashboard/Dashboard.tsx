@@ -252,7 +252,7 @@ export default function Sidebar() {
               onClick={() => setTheme("light")}
               className={`p-2 border-2 rounded-full shadow ${
                 resolvedTheme === "light"
-                  ? "bg-yellow-300 text-white border-yellow-400"
+                  ? "bg-gray-300 text-white border-gray-400"
                   : "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-gray-200 dark:border-gray-600"
               }`}
             >

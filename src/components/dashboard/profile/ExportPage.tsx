@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Menu } from "@headlessui/react";
 import { FaCheckCircle, FaCircle } from "react-icons/fa";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -9,27 +8,27 @@ const files = [
   {
     name: "Welcome",
     color: "text-purple-600",
-    icon: "check",
+    icon: "dot",
     date: "22-Dec-2029 10:00 AM",
     size: "2.3GB",
   },
   {
     name: "Voice Tools",
     color: "text-blue-600",
-    icon: "check",
+    icon: "dot",
     date: "22-Dec-2029 10:00 AM",
     size: "2.3GB",
   },
   {
     name: "Video Generation",
     color: "text-green-600",
-    icon: "check",
+    icon: "dot",
     date: "22-Dec-2029 10:00 AM",
     size: "2.3GB",
   },
   {
     name: "Photo Generation",
-    color: "text-black",
+    color: "text-[#a29ad0]",
     icon: "dot",
     date: "22-Dec-2029 10:00 AM",
     size: "2.3GB",
@@ -51,7 +50,6 @@ const files = [
 ];
 
 export default function ExportPage() {
-  const [format, setFormat] = useState("PDF");
   const [selected, setSelected] = useState<number[]>([]);
 
   const toggleSelect = (i: number) => {
@@ -61,48 +59,27 @@ export default function ExportPage() {
   };
 
   return (
-    <div className="p-2 h-screen bg-white sm:p-4 max-w-4xl mx-auto w-full">
-      <h1 className="text-2xl p-2 font-bold mb-6">Export Chat</h1>
-      <hr className="mb-6 text-gray-200" />
+    <div className="p-2 h-screen bg-white dark:bg-gray-900 sm:p-4 max-w-4xl mx-auto w-full">
+      <h1 className="text-2xl p-2 font-bold mb-6 text-gray-900 dark:text-white">Export Chat</h1>
+      <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <button
-          className="border border-gray-300 text-gray-800 px-4 py-2 rounded-md text-sm bg-white hover:bg-gray-50"
-          onClick={() => alert("Download started")}
-        >
-          Download Chat History
-        </button>
+      <div className="flex justify-start mb-4">
+  <button
+    onClick={() => alert("Download started")}
+    className="inline-flex items-center border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 text-sm rounded-md overflow-hidden hover:bg-gray-50 dark:hover:bg-gray-700"
+  >
+    <span className="px-4 py-2">Download Chat History</span>
+    <span className="border-l border-gray-300 dark:border-gray-600 px-3 py-2 flex items-center gap-1">
+      PDF
+      <BiChevronDown className="w-4 h-4" />
+    </span>
+  </button>
+</div>
 
-        <Menu
-          as="div"
-          className="relative inline-block text-left w-full sm:w-auto"
-        >
-          <Menu.Button className="inline-flex justify-between sm:justify-center w-full sm:w-auto items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50">
-            {format}
-            <BiChevronDown className="w-4 h-4 ml-2" />
-          </Menu.Button>
-          <Menu.Items className="absolute z-10 mt-2 w-full sm:w-32 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
-            {["PDF", "TXT", "HTML"].map((f) => (
-              <Menu.Item key={f}>
-                {({ active }) => (
-                  <button
-                    onClick={() => setFormat(f)}
-                    className={`${
-                      active ? "bg-gray-100" : ""
-                    } w-full text-left px-4 py-2 text-sm`}
-                  >
-                    {f}
-                  </button>
-                )}
-              </Menu.Item>
-            ))}
-          </Menu.Items>
-        </Menu>
-      </div>
 
-      <div className="overflow-x-auto border border-gray-200 rounded-xl">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-50 text-gray-700">
+      <div className="overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl">
+        <table className="min-w-full text-sm text-left text-gray-800 dark:text-gray-100">
+          <thead className="bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200">
             <tr>
               <th className="p-4">
                 <input
@@ -122,8 +99,8 @@ export default function ExportPage() {
             {files.map((file, i) => (
               <tr
                 key={file.name}
-                className={`border-t ${
-                  selected.includes(i) ? "bg-purple-50" : ""
+                className={`border-t border-gray-200 dark:border-gray-700 ${
+                  selected.includes(i) ? "bg-purple-50 dark:bg-purple-900" : ""
                 }`}
               >
                 <td className="p-4">
