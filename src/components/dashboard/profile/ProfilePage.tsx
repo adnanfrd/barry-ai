@@ -11,7 +11,7 @@ export default function ProfilePage() {
   const [bio, setBio] = useState("Placeholder");
 
   return (
-    <div className="h-screen rounded-r-xl max-w-4xl bg-white dark:bg-[#232127] mx-auto">
+    <div className="h-screen rounded-r-xl bg-white dark:bg-[#232127] mx-auto">
       <h1 className="text-2xl p-6 font-bold text-black dark:text-white mb-2">Profile</h1>
       <hr className="mb-6 border-gray-200 dark:border-gray-700" />
       <div className="py-6 px-2 sm:p-6 rounded-2xl space-y-6">

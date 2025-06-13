@@ -24,7 +24,7 @@ export default function AppearancePage() {
   if (!mounted) return null;
 
   return (
-    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] text-black dark:text-white sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] text-black dark:text-white sm:p-4 mx-auto w-full">
       <h1 className="p-2 text-2xl font-bold mb-6">Appearance</h1>
       <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 

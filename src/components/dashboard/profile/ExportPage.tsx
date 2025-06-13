@@ -59,7 +59,7 @@ export default function ExportPage() {
   };
 
   return (
-    <div className="p-2 h-screen bg-white dark:bg-gray-900 sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen bg-white dark:bg-gray-900 sm:p-4 mx-auto w-full">
       <h1 className="text-2xl p-2 font-bold mb-6 text-gray-900 dark:text-white">Export Chat</h1>
       <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 

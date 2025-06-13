@@ -57,7 +57,7 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 mx-auto w-full">
       <div className="flex p-2 justify-between items-center mb-6">
         <h1 className="text-2xl text-gray-900 dark:text-white font-bold">Team</h1>
         <Button className="bg-purple-600 rounded-xl hover:bg-purple-700 text-white px-4 py-2 text-sm font-medium">

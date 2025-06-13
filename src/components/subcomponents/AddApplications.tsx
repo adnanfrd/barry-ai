@@ -105,7 +105,7 @@ const apps = [
 
 const AddApplications = () => {
   return (
-    <div className="w-full  bg-white dark:bg-[#232127] p-4 rounded-xl max-w-6xl mx-auto px-4 font-poppins">
+    <div className="w-full h-screen min-h-screen  overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] bg-white dark:bg-[#232127] p-4 rounded-xl mx-auto px-4 font-poppins">
       <h1 className="text-2xl p-2 font-bold mb-1 text-gray-900 dark:text-white">
         Applications
       </h1>

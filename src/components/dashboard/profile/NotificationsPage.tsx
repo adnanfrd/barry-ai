@@ -25,7 +25,7 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 mx-auto w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-black dark:text-white">Notifications</h1>
@@ -70,7 +70,7 @@ export default function NotificationsPage() {
           </div>
 
           {/* Add New Email Button */}
-          <button className="w-[40%] px-4 py-2 flex cursor-pointer hover:bg-gray-500 items-center justify-center text-purple-600 dark:text-purple-400 text-sm font-medium border border-transparent rounded-md">
+          <button className="w-[40%] px-4 py-2 flex cursor-pointer hover:bg-gray-200 items-center justify-center text-purple-600 dark:text-purple-400 text-sm font-medium border border-transparent rounded-md">
             <BiPlusCircle className="mr-2 text-base" />
             Add new email
           </button>

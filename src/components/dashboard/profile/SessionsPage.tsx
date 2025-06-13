@@ -40,7 +40,7 @@ export default function SessionsPage() {
   const [showBanner, setShowBanner] = useState(true);
 
   return (
-    <div className="p-2 h-screen bg-white rounded-r-xl dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen bg-white rounded-r-xl dark:bg-[#232127] sm:p-4 mx-auto w-full">
       <div className="flex p-2 justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Sessions</h1>
         <button className="text-red-500 border border-red-500 hover:bg-red-50 dark:hover:bg-red-100/10 text-sm px-4 py-1.5 rounded-md font-medium dark:text-[#e4a29e] dark:border-[#e4a29e]">

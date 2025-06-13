@@ -29,7 +29,7 @@ const applications = [
 
 export default function ApplicationsPage() {
   return (
-    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 max-w-4xl mx-auto w-full">
+    <div className="p-2 h-screen rounded-r-xl bg-white dark:bg-[#232127] sm:p-4 mx-auto w-full">
       <div className="flex p-2 justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Applications</h1>
         <Link href="/dashboard/addapplications">
