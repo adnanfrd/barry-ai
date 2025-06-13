@@ -1,7 +1,6 @@
 import ChatSidebar from "@/components/dashboard/ChatSidebar";
 import Header from "@/components/dashboard/Header";
 import WelcomePage from "@/components/dashboard/WelcomePage";
-import PromptInput from "@/components/subcomponents/PromptInput";
 import React from "react";
 
 const page = () => {
