@@ -1,6 +1,6 @@
 "use client";
 
-import { Tab } from "@headlessui/react";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { FaChevronDown, FaTerminal } from "react-icons/fa";
 import { Disclosure } from "@headlessui/react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -55,33 +55,37 @@ function classNames(...classes: string[]) {
 
 export default function FaqPage() {
   return (
-    <div className="w-full bg-white dark:bg-[#232127] p-4 rounded-xl mx-auto px-4 font-poppins">
-      <h1 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">Updates & FAQ</h1>
+    <div className="w-full h-screen min-h-screen overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']  bg-white dark:bg-[#232127] p-4 rounded-xl mx-auto px-4 font-poppins">
+      <h1 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">
+        Updates & FAQ
+      </h1>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
         Enhancements, Resolutions & Upgrades
       </p>
 
-      <Tab.Group>
-        <Tab.List className="flex space-x-6 mb-4 border-b border-gray-200 dark:border-gray-700">
-          {["Updates", "FAQ"].map((tab) => (
-            <Tab
-              key={tab}
-              className={({ selected }) =>
-                classNames(
-                  "relative pb-2 text-sm font-semibold cursor-pointer focus:outline-none",
-                  selected
-                    ? "text-purple-600 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:w-4 after:h-1 after:rounded-full after:bg-purple-600"
-                    : "text-gray-700 dark:text-gray-300"
-                )
-              }
-            >
-              {tab}
-            </Tab>
-          ))}
-        </Tab.List>
+      <TabGroup>
+        <div className="sticky top-0 z-[10] bg-white dark:bg-[#232127]">
+          <TabList className="flex space-x-6 mb-4 border-b border-gray-200 dark:border-gray-700">
+            {["Updates", "FAQ"].map((tab) => (
+              <Tab
+                key={tab}
+                className={({ selected }) =>
+                  classNames(
+                    "relative pb-2 text-sm font-semibold cursor-pointer focus:outline-none",
+                    selected
+                      ? "text-purple-600 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-0.5 after:w-4 after:h-1 after:rounded-full after:bg-purple-600"
+                      : "text-gray-700 dark:text-gray-300"
+                  )
+                }
+              >
+                {tab}
+              </Tab>
+            ))}
+          </TabList>
+        </div>
 
-        <Tab.Panels>
-          <Tab.Panel>
+        <TabPanels>
+          <TabPanel>
             <div className="space-y-6">
               {updates.map((item, idx) => (
                 <div
@@ -157,9 +161,9 @@ export default function FaqPage() {
                 </div>
               ))}
             </div>
-          </Tab.Panel>
+          </TabPanel>
 
-          <Tab.Panel>
+          <TabPanel>
             <div className="bg-white dark:bg-[#232127] rounded-xl shadow p-4">
               <div className="divide-y divide-gray-400">
                 {faqs.map((faq, index) => (
@@ -198,9 +202,9 @@ export default function FaqPage() {
                 ))}
               </div>
             </div>
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </div>
   );
 }
