@@ -229,6 +229,7 @@ export default function ChatSidebar() {
           </div>
         ))}
       </div>
+   
     </div>
   );
 }
