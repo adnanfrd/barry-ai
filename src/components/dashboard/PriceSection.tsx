@@ -96,7 +96,7 @@ export default function PricingSection() {
               className={`relative p-5 rounded-2xl border ${
                 plan.featured
                   ? "bg-purple-600 text-white scale-110 border-purple-600"
-                  : "bg-[#f1f0f3] dark:bg-[#2c292f] text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                  : "bg-[#f1eff3] dark:bg-[#2c292f] text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               }`}
             >
               {/* Badge */}

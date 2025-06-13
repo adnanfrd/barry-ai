@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 export default function PurchaseConfirmation() {
   return (
-    <div className="min-h-screen rounded-xl bg-white dark:bg-[#232127] py-10 px-4 sm:px-6 lg:px-8 font-poppins">
+    <div className="min-h-screen rounded-xl h-screen overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] bg-white dark:bg-[#232127] py-10 px-4 sm:px-6 lg:px-8 font-poppins">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-2xl font-bold text-black dark:text-white">
           Thank you for your purchase!
