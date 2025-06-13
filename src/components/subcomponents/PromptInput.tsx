@@ -27,7 +27,7 @@ const PromptInput = () => {
 
   return (
     <>
-      <div className="mt-12 mb-6 relative z-10">
+      <div className=" relative z-2">
         <div className="relative flex items-center bg-[#f9f9fb] dark:bg-[#1f1f25] rounded-full px-4 py-2 shadow-sm border border-[#e5e5ef] dark:border-[#333] min-h-[48px] transition-all duration-300">
           {/* Expand/Collapse Button */}
           <button

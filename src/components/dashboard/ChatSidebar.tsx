@@ -1,6 +1,15 @@
 "use client";
 
-import { Button, Menu, Popover } from "@headlessui/react";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/react";
 import Image from "next/image";
 import { FaEdit, FaSignOutAlt } from "react-icons/fa";
 import { RiChatNewLine } from "react-icons/ri";
@@ -42,7 +51,8 @@ const messages = [
 
 export default function ChatSidebar() {
   return (
-    <div className="w-[300px] bg-[#faf9fa] dark:bg-[#1f1f1f] p-4 rounded-2xl shadow flex flex-col gap-4">
+    <div className="w-[300px] h-screen bg-[#faf9fa] dark:bg-[#1f1f1f] p-4 rounded-2xl shadow flex flex-col gap-4">
+      {/* Header */}
       <div className="flex justify-between items-center">
         <Button className="cursor-pointer bg-[#8d55e3] text-white text-sm px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow">
           <RiChatNewLine className="w-4 h-4" />
@@ -56,12 +66,10 @@ export default function ChatSidebar() {
               12
             </span>
           </div>
-          <div>
-            <CiBellOn className="w-6 h-6 dark:text-gray-300" />
-          </div>
+          <CiBellOn className="w-6 h-6 dark:text-gray-300" />
 
           <Menu as="div" className="relative">
-            <Menu.Button className="cursor-pointer">
+            <MenuButton className="cursor-pointer">
               <div className="relative">
                 <Image
                   src="/photo1.png"
@@ -72,10 +80,10 @@ export default function ChatSidebar() {
                 />
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-700 border-2 border-white dark:border-gray-900 rounded-full"></span>
               </div>
-            </Menu.Button>
+            </MenuButton>
 
-            <Menu.Items className="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-gray-100 dark:divide-gray-700 rounded-xl bg-white dark:bg-[#2c2a30] shadow-lg ring-1 ring-black/5 focus:outline-none z-20">
-              <div className="px-4 py-3 flex items-center gap-3">
+            <MenuItems className="absolute right-0 mt-2 w-64 origin-top-right divide-y divide-gray-100 dark:divide-gray-700 rounded-xl bg-white dark:bg-[#2c2a30] shadow-lg ring-1 ring-black/5 focus:outline-none z-20">
+              <div className="px-4 flex items-center gap-3 py-2">
                 <Image
                   src="/photo1.png"
                   alt="User Avatar"
@@ -93,7 +101,7 @@ export default function ChatSidebar() {
                 </div>
               </div>
 
-              <div className="py-2">
+              <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
                     <button
@@ -101,13 +109,13 @@ export default function ChatSidebar() {
                         active ? "bg-gray-100 dark:bg-gray-800" : ""
                       }`}
                     >
-                      <IoArrowDownCircleSharp className="text-gray-600 dark:text-gray-300" />{" "}
+                      <IoArrowDownCircleSharp className="text-gray-600 dark:text-gray-300" />
                       New version available
                     </button>
                   )}
                 </Menu.Item>
 
-                <Menu.Item>
+                <MenuItem>
                   {({ active }) => (
                     <button
                       className={`w-full flex items-center gap-2 px-4 py-2 text-sm ${
@@ -122,9 +130,9 @@ export default function ChatSidebar() {
                       </Link>
                     </button>
                   )}
-                </Menu.Item>
+                </MenuItem>
 
-                <Menu.Item>
+                <MenuItem>
                   {({ active }) => (
                     <button
                       className={`w-full flex items-center gap-2 px-4 py-2 text-sm ${
@@ -141,28 +149,26 @@ export default function ChatSidebar() {
                       </a>
                     </button>
                   )}
-                </Menu.Item>
+                </MenuItem>
               </div>
-            </Menu.Items>
+            </MenuItems>
           </Menu>
         </div>
       </div>
 
-      {/* Title */}
-      <div className="flex justify-between py-2 items-center">
-        <h2 className="text-sm font-medium  text-gray-600 dark:text-gray-300">
+      {/* Title Section */}
+      <div className="flex justify-between items-center py-1">
+        <h2 className="text-sm font-medium text-gray-600 dark:text-gray-300">
           Conversation History
         </h2>
 
-        {/* Edit Button */}
         <Popover className="relative">
-          <Popover.Button className="focus:outline-none cursor-pointer">
+          <PopoverButton className="focus:outline-none cursor-pointer">
             <FaEdit className="text-gray-400 dark:text-gray-300 w-4 h-4" />
-          </Popover.Button>
+          </PopoverButton>
 
-          <Popover.Panel className="absolute z-20 right-0 w-120 bg-white dark:bg-[#2c2a30] shadow-lg rounded-xl p-4 border border-gray-100 dark:border-gray-700">
+          <PopoverPanel className="absolute z-20 right-0 w-72 bg-white dark:bg-[#2c2a30] shadow-lg rounded-xl p-4 border border-gray-100 dark:border-gray-700">
             <div className="flex justify-between items-center flex-wrap gap-4">
-              {/* Icon + Label */}
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-red-100 dark:bg-red-900 text-red-500 dark:text-red-400 rounded-lg">
                   <FiAlertCircle className="w-5 h-5" />
@@ -172,8 +178,7 @@ export default function ChatSidebar() {
                 </p>
               </div>
 
-              {/* Buttons */}
-              <div className="flex justify-end gap-2">
+              <div className="flex justify-end gap-2 w-full">
                 <button className="px-4 py-1.5 text-sm border rounded-md text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 bg-white dark:bg-transparent">
                   Cancel
                 </button>
@@ -182,13 +187,14 @@ export default function ChatSidebar() {
                 </button>
               </div>
             </div>
-          </Popover.Panel>
+          </PopoverPanel>
         </Popover>
       </div>
 
-      <div className="flex flex-col gap-4 py-4 overflow-y-auto">
+      {/* Scrollable Messages */}
+      <div className="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex flex-col gap-4 py-1 pr-1">
         {messages.map((msg, index) => (
-          <div key={index} className="flex flex-col gap-2 py-3 rounded-xl">
+          <div key={index} className="flex flex-col gap-2 py-1 rounded-xl">
             <div className="px-1">
               <p className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
                 {msg.title}
@@ -212,7 +218,7 @@ export default function ChatSidebar() {
               <p className="text-xs text-gray-400 dark:text-gray-400 mt-1">
                 {msg.time}
               </p>
-              <div className="flex items-center gap-[-6px] mt-2">
+              <div className="flex items-center -space-x-2 mt-2">
                 {msg.avatars.map((avatar, i) => (
                   <Image
                     key={i}
@@ -220,7 +226,7 @@ export default function ChatSidebar() {
                     alt="avatar"
                     width={24}
                     height={24}
-                    className="rounded-full border-2 border-white dark:border-gray-900 -ml-1"
+                    className="rounded-full border-2 border-white dark:border-gray-900"
                   />
                 ))}
               </div>
@@ -228,7 +234,6 @@ export default function ChatSidebar() {
           </div>
         ))}
       </div>
-   
     </div>
   );
 }
