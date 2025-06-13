@@ -15,56 +15,18 @@ import Link from "next/link";
 
 const navItems = [
   { name: "Chats", href: "/dashboard", icon: BsChat },
-  {
-    name: "Updates & FAQ",
-    href: "/dashboard/updatesfaq",
-    icon: CiCircleQuestion,
-  },
-  {
-    name: "Subscriptions",
-    href: "/dashboard/subscriptions",
-    icon: CiCreditCard1,
-  },
+  { name: "Updates & FAQ", href: "/dashboard/updatesfaq", icon: CiCircleQuestion },
+  { name: "Subscriptions", href: "/dashboard/subscriptions", icon: CiCreditCard1 },
   { name: "Settings", href: "/dashboard/settings", icon: VscSettings },
 ];
 
 const favorites = [
-  {
-    name: "Welcome",
-    href: "/dashboard/welcome",
-    color: "#6c6c6c",
-    count: 1,
-  },
-  {
-    name: "Voice Tools",
-    href: "/dashboard/voice",
-    color: "#4a90e2",
-    count: 12,
-  },
-  {
-    name: "Video Generation",
-    href: "/dashboard/video",
-    color: "#4caf50",
-    count: 48,
-  },
-  {
-    name: "Photo Generation",
-    href: "/dashboard/photo",
-    color: "#9b59b6",
-    count: 2,
-  },
-  {
-    name: "Education & Science",
-    href: "/dashboard/education",
-    color: "#d2691e",
-    count: 7,
-  },
-  {
-    name: "New list",
-    href: "/dashboard/newlist",
-    icon: FaCirclePlus,
-    count: 0,
-  },
+  { name: "Welcome", href: "/dashboard/welcome", color: "#6c6c6c", count: 1 },
+  { name: "Voice Tools", href: "/dashboard/voice", color: "#4a90e2", count: 12 },
+  { name: "Video Generation", href: "/dashboard/video", color: "#4caf50", count: 48 },
+  { name: "Photo Generation", href: "/dashboard/photo", color: "#9b59b6", count: 2 },
+  { name: "Education & Science", href: "/dashboard/education", color: "#d2691e", count: 7 },
+  { name: "New list", href: "/dashboard/newlist", icon: FaCirclePlus, count: 0 },
 ];
 
 export default function Sidebar() {
@@ -80,13 +42,8 @@ export default function Sidebar() {
 
   if (!mounted) return null;
 
-  const handleSearch = () => {
-    router.push("/dashboard/search");
-  };
-
-  const toggleSidebar = () => {
-    setCollapsed(!collapsed);
-  };
+  const handleSearch = () => router.push("/dashboard/search");
+  const toggleSidebar = () => setCollapsed(!collapsed);
 
   return (
     <aside
@@ -103,12 +60,7 @@ export default function Sidebar() {
           {!collapsed && (
             <Link href="/dashboard">
               <div className="flex items-center">
-                <Image
-                  src="/app-icon.png"
-                  alt="App Icon"
-                  width={32}
-                  height={32}
-                />
+                <Image src="/app-icon.png" alt="App Icon" width={32} height={32} />
                 <span className="ml-2 text-xl font-semibold text-gray-800 dark:text-white">
                   Fusion <span className="text-purple-600">AI</span>
                 </span>
@@ -123,10 +75,7 @@ export default function Sidebar() {
 
         {/* Search */}
         {!collapsed && (
-          <div
-            onClick={handleSearch}
-            className="relative w-full mb-2 cursor-pointer"
-          >
+          <div onClick={handleSearch} className="relative w-full mb-2 cursor-pointer">
             <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg" />
             <input
               type="text"
@@ -147,13 +96,14 @@ export default function Sidebar() {
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-all hover:text-gray-900
-                hover:bg-[#f1eff3] dark:hover:bg-[#333] dark:hover:text-white
-                ${
-                  pathname === item.href
-                    ? "bg-[#7e4ce0] text-white"
-                    : "text-gray-700 dark:text-gray-300"
-                }`}
+              className={`flex ${collapsed ? "justify-center" : "items-center gap-3"} 
+              px-3 py-2 rounded-md text-sm font-medium transition-all hover:text-gray-900
+              hover:bg-[#f1eff3] dark:hover:bg-[#333] dark:hover:text-white
+              ${
+                pathname === item.href
+                  ? "bg-[#7e4ce0] text-white"
+                  : "text-gray-700 dark:text-gray-300"
+              }`}
             >
               <item.icon className="h-5 w-5" />
               {!collapsed && item.name}
@@ -162,22 +112,24 @@ export default function Sidebar() {
           <hr className="text-[#e8e5ec] dark:text-gray-700 mb-2" />
         </nav>
 
-        <div className="mb-1 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+        <div className={`mb-1 ${collapsed ? "flex justify-center" : "flex items-center gap-2"} text-sm text-gray-500 dark:text-gray-400`}>
           <MdKeyboardArrowDown />
           {!collapsed && <span>Favorites</span>}
         </div>
+
         <div className="space-y-1">
           {favorites.map((item, index) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`flex items-center gap-3 px-2 py-2 rounded-md text-sm font-medium transition-all 
-                hover:bg-[#f1eff3] dark:hover:bg-[#333] 
-                ${
-                  pathname === item.href
-                    ? "bg-[#f1eff3] dark:bg-[#333]"
-                    : "text-gray-700 dark:text-gray-300"
-                }`}
+              className={`flex ${collapsed ? "justify-center" : "items-center gap-3"} 
+              px-2 py-2 rounded-md text-sm font-medium transition-all 
+              hover:bg-[#f1eff3] dark:hover:bg-[#333] 
+              ${
+                pathname === item.href
+                  ? "bg-[#f1eff3] dark:bg-[#333]"
+                  : "text-gray-700 dark:text-gray-300"
+              }`}
             >
               {index === favorites.length - 1 ? (
                 <FaCirclePlus className="h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -202,46 +154,25 @@ export default function Sidebar() {
       <div className="py-1">
         {collapsed ? (
           <div className="flex justify-center mb-2">
-            <Image
-              src="/photo.png"
-              alt="User Avatar"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
-            />
+            <Image src="/photo.png" alt="User Avatar" width={40} height={40} className="rounded-full object-cover" />
           </div>
         ) : (
           <div className="bg-white dark:bg-[#2a2a2a] rounded-xl p-4 shadow-sm w-full max-w-xs mb-4">
             <div className="flex items-center gap-3">
-              <Image
-                src="/photo.png"
-                alt="User Avatar"
-                width={40}
-                height={40}
-                className="rounded-full object-cover"
-              />
+              <Image src="/photo.png" alt="User Avatar" width={40} height={40} className="rounded-full object-cover" />
               <div>
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                  James Broeng
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  james@broeng.co.uk
-                </p>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">James Broeng</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">james@broeng.co.uk</p>
               </div>
             </div>
             <hr className="my-3 border-gray-200 dark:border-gray-600" />
             <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
               <FaWineGlass className="text-gray-400 dark:text-gray-500" />
               <span className="font-medium">50%</span>
-              <span className="text-gray-500 dark:text-gray-400">
-                Completed
-              </span>
+              <span className="text-gray-500 dark:text-gray-400">Completed</span>
             </div>
             <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2">
-              <div
-                className="bg-purple-500 h-1.5 rounded-full"
-                style={{ width: "50%" }}
-              />
+              <div className="bg-purple-500 h-1.5 rounded-full" style={{ width: "50%" }} />
             </div>
           </div>
         )}
