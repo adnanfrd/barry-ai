@@ -1,12 +1,10 @@
 "use client";
-
 import Image from "next/image";
-import { HiOutlineLink } from "react-icons/hi";
-import { PiCaretDown } from "react-icons/pi";
 import { FiDownloadCloud, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
 import Header from "./Header";
 import PromptInput from "../subcomponents/PromptInput";
+import { FaCode, FaGraduationCap, FaImage, FaMicrophone, FaRegFileAlt, FaVideo } from "react-icons/fa";
 
 export default function VoiceToolsPage() {
   return (
@@ -58,16 +56,23 @@ export default function VoiceToolsPage() {
           </div>
         </div>
 
-        <div className="flex h-[60vh] bg-[#F9F8FC] dark:bg-[#27272a] gap-4 p-6 rounded-2xl">
-          <div className="w-14 flex flex-col items-center bg-[#edebf1] dark:bg-[#3d3b45] rounded-2xl py-4 gap-6">
-            <div className="bg-[#EBE9F7] dark:bg-[#4b4961] p-2 rounded-xl">
-              <HiOutlineLink className="w-5 h-5 text-[#4B4B4B] dark:text-white" />
+        <div className="flex bg-[#F9F8FC] dark:bg-[#18181B] gap-4 p-6 rounded-2xl">
+          {/* Sidebar */}
+          <div className="w-14 flex flex-col px-3 items-center bg-[#edebf1] dark:bg-[#2b2a33] rounded-2xl py-4 gap-4">
+            <div className="bg-[#524E63] dark:bg-[#3c384a]  rounded-xl">
+              <Image
+                src="/Vector.png"
+                alt="icon"
+                width={40}
+                height={40}
+                className="w-5 h-5"
+              />
             </div>
             <div className="text-[10px] text-gray-400 dark:text-gray-300 font-medium">
               12:22
             </div>
-            <hr className="text-gray-700 dark:text-gray-500" />
-            <div className="flex flex-col items-center gap-6 text-gray-500 dark:text-gray-400 mt-2">
+            <div className="w-4/5 h-px bg-gray-300 dark:bg-gray-600 my-2" />
+            <div className="flex flex-col items-center gap-4 text-gray-500 dark:text-gray-400 mt-2">
               <LuCopy className="w-5 h-5 hover:text-black dark:hover:text-white cursor-pointer" />
               <FiDownloadCloud className="w-5 h-5 hover:text-black dark:hover:text-white cursor-pointer" />
               <FiThumbsUp className="w-5 h-5 hover:text-black dark:hover:text-white cursor-pointer" />
@@ -75,40 +80,40 @@ export default function VoiceToolsPage() {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-2">
-            <div className="text-gray-800 dark:text-gray-100 text-sm max-w-lg">
-              <p>
-                Vertical inspect effect library flatten strikethrough list
-                export overflow outline. Figjam vertical share background export
-                outline align mask edit list. Asset strikethrough layout.
-              </p>
-            </div>
+          {/* Main Content */}
+          <div className="flex flex-col space-y-3">
+            <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+              Vertical inspect effect library flatten strikethrough list export
+              overflow outline. Figjam vertical share background export outline
+              align mask edit list. Asset strikethrough layout.
+            </p>
 
-            <div className="relative w-[320px] h-[210px] rounded-xl overflow-hidden shadow">
-              <Image
-                src="/videogenerate.png"
-                alt="AI generated"
-                layout="fill"
-                objectFit="cover"
+            {/* Tools Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-3 mt-2">
+              <ToolButton
+                icon={<FaImage className="text-purple-500" />}
+                label="Photo Generation"
               />
-            </div>
-
-            <div className="flex items-center gap-2 mt-2">
-              <button className="w-10 h-8 flex items-center justify-center bg-gradient-to-tr from-[#9254ff] to-[#a974ff] rounded-xl cursor-pointer">
-                <FiDownloadCloud className="text-white w-4 h-4" />
-              </button>
-
-              <div className="flex items-center bg-white dark:bg-[#2b2b2b] border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-md text-sm text-gray-700 dark:text-gray-200 gap-1 cursor-pointer">
-                <span>En (US)</span>
-                <PiCaretDown className="w-4 h-4 text-gray-500 dark:text-gray-300" />
-              </div>
-
-              <div className="flex items-center bg-white dark:bg-[#2b2b2b] border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-md text-sm text-gray-700 dark:text-gray-200 gap-1 cursor-pointer">
-                <span>
-                  Voice <strong>Marry</strong>
-                </span>
-                <PiCaretDown className="w-4 h-4 text-gray-500 dark:text-gray-300" />
-              </div>
+              <ToolButton
+                icon={<FaVideo className="text-green-500" />}
+                label="Video Generation"
+              />
+              <ToolButton
+                icon={<FaGraduationCap className="text-pink-500" />}
+                label="Education & Science"
+              />
+              <ToolButton
+                icon={<FaCode className="text-indigo-500" />}
+                label="Code Generation"
+              />
+              <ToolButton
+                icon={<FaMicrophone className="text-sky-500" />}
+                label="Voice Tools"
+              />
+              <ToolButton
+                icon={<FaRegFileAlt className="text-yellow-600" />}
+                label="Text Recognition"
+              />
             </div>
           </div>
         </div>
@@ -117,5 +122,14 @@ export default function VoiceToolsPage() {
         <PromptInput />
       </div>
     </div>
+  );
+}
+
+function ToolButton({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <button className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-[#232127] border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow transition">
+      <span className="text-lg">{icon}</span>
+      {label}
+    </button>
   );
 }
