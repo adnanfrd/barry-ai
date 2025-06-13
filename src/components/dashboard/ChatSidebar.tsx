@@ -150,8 +150,8 @@ export default function ChatSidebar() {
       </div>
 
       {/* Title */}
-      <div className="flex justify-between items-center">
-        <h2 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+      <div className="flex justify-between py-2 items-center">
+        <h2 className="text-sm font-medium  text-gray-600 dark:text-gray-300">
           Conversation History
         </h2>
 
@@ -187,9 +187,9 @@ export default function ChatSidebar() {
         </Popover>
       </div>
 
-      <div className="flex flex-col gap-4 overflow-y-auto">
+      <div className="flex flex-col gap-4 py-4 overflow-y-auto">
         {messages.map((msg, index) => (
-          <div key={index} className="flex flex-col gap-2 rounded-xl">
+          <div key={index} className="flex flex-col gap-2 py-3 rounded-xl">
             <div className="px-1">
               <p className="text-sm font-bold text-gray-900 dark:text-white leading-tight">
                 {msg.title}

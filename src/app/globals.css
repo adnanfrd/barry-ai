@@ -40,3 +40,12 @@
 :root[data-theme="pastel"] {
   background-color: var(--color-background-pastel);
 }
+
+/* styles/globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
