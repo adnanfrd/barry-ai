@@ -5,17 +5,14 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex h-screen">
-      <div className="flex flex-col flex-1 px-3">
-        <Header />
+    <div className="flex">
+      
 
         <div className="flex flex-col flex-1  ">
-          <div className="">
+          <div className=" pr-3">
             <WelcomePage />
           </div>
         </div>
-      </div>
-
       <div>
         <ChatSidebar />
       </div>
