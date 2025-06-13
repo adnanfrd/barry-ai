@@ -66,13 +66,14 @@ const last30Items = [
 
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#232127] p-6 space-y-6 rounded-xl">
+    <div className=" h-screen min-h-screen overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] bg-white dark:bg-[#232127] p-6 space-y-6 rounded-xl">
       <h1 className="text-2xl p-2 text-gray-900 dark:text-white px-4 py-2 font-bold mb-6">
         Search
       </h1>
       <hr className="mb-6 border-gray-200 dark:border-gray-700" />
 
-      <div className="flex flex-wrap items-center gap-4">
+        <div className="sticky top-0 z-[10] bg-white dark:bg-[#232127]">
+        <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-10 bg-gray-100 dark:bg-[#312e36] py-1 px-3 rounded-xl">
           <div className="flex items-center space-x-1 px-3 py-1.5 rounded-md text-sm text-gray-700 dark:text-gray-300">
             <span>Type</span>
@@ -102,6 +103,7 @@ const last30Items = [
           </Button>
         </Menu>
       </div>
+    </div>
 
       <Section title="Today" date="Web 22 Dec" items={todayItems} />
       <Section title="Last 30 days" items={last30Items} />
