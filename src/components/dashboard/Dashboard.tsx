@@ -50,7 +50,7 @@ export default function Sidebar() {
       className={`${
         collapsed ? "w-20" : "w-64"
       } transition-all duration-300 rounded-xl shrink-0 
-      bg-[#faf9fa] dark:bg-[#1e1c21] 
+      bg-[#faf9fa] dark:bg-[#1e1c21]  
       border-r border-gray-200 dark:border-gray-700 
       hidden md:flex flex-col justify-between p-4 shadow-sm`}
     >

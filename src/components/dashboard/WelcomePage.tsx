@@ -5,6 +5,7 @@ import { HiOutlineLink } from "react-icons/hi";
 import { PiCaretDown } from "react-icons/pi";
 import { FiDownloadCloud, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
+import PromptInput from "../subcomponents/PromptInput";
 
 export default function WelcomePage() {
   return (
@@ -98,6 +99,8 @@ export default function WelcomePage() {
           </div>
         </div>
       </div>
+  <PromptInput />
+
     </div>
   );
 }

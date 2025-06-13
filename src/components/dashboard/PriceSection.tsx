@@ -53,7 +53,7 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-2 font-poppins">
+    <section className="w-full px-6 py-2 font-poppins">
       <h2 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">
         Cost-Effective AI Chat Services
       </h2>

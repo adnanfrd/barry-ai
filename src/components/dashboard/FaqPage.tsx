@@ -55,7 +55,7 @@ function classNames(...classes: string[]) {
 
 export default function FaqPage() {
   return (
-    <div className="w-full bg-white dark:bg-[#232127] p-4 rounded-xl max-w-5xl mx-auto px-4 font-poppins">
+    <div className="w-full bg-white dark:bg-[#232127] p-4 rounded-xl mx-auto px-4 font-poppins">
       <h1 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">Updates & FAQ</h1>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
         Enhancements, Resolutions & Upgrades
