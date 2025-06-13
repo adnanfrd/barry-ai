@@ -302,7 +302,7 @@ export default function WelcomePage() {
           </div>
         </div>
       </div>
-      <div className="flex-none sticky bottom-0 bg-white dark:bg-[#1c1c1f] border-gray-200 dark:border-gray-700 px-4 py-3">
+      <div className="flex-none rounded-xl sticky bottom-0 bg-white dark:bg-[#1c1c1f] border-gray-200 dark:border-gray-700 px-4 py-3">
         <PromptInput />
       </div>
     </div>
