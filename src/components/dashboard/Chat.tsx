@@ -12,10 +12,8 @@ import PromptInput from "../subcomponents/PromptInput";
 export default function ChatsPage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-2">
-      <div className="bg-white  dark:bg-[#1a1a1a] rounded-2xl p-6 relative overflow-y-auto shadow-xl">
-        <div className="overflow-y-auto p-6 pb-36">
+      <div className="bg-white dark:bg-[#1a1a1a] rounded-2xl p-6 relative overflow-y-auto shadow-xl">
           {" "}
-          {/* Add bottom padding */}
           <div className="absolute top-0 left-0 right-0 py-18 h-48 rounded-t-2xl overflow-hidden z-0">
             <Image
               src="/art work.png"
@@ -89,7 +87,7 @@ export default function ChatsPage() {
               </Link>
             ))}
           </div>
-        </div>
+        
 
         <PromptInput />
       </div>

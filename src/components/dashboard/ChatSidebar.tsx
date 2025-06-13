@@ -43,7 +43,6 @@ const messages = [
 export default function ChatSidebar() {
   return (
     <div className="w-[300px] bg-[#faf9fa] dark:bg-[#1f1f1f] p-4 rounded-2xl shadow flex flex-col gap-4">
-      {/* Top bar */}
       <div className="flex justify-between items-center">
         <Button className="cursor-pointer bg-[#8d55e3] text-white text-sm px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow">
           <RiChatNewLine className="w-4 h-4" />

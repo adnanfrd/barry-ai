@@ -99,7 +99,7 @@ export default function Sidebar() {
     >
       <div>
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-2">
           {!collapsed && (
             <Link href="/dashboard">
               <div className="flex items-center">
@@ -125,7 +125,7 @@ export default function Sidebar() {
         {!collapsed && (
           <div
             onClick={handleSearch}
-            className="relative w-full mb-4 cursor-pointer"
+            className="relative w-full mb-2 cursor-pointer"
           >
             <CiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg" />
             <input
@@ -142,7 +142,7 @@ export default function Sidebar() {
         )}
 
         {/* Main Nav */}
-        <nav className="mb-6 space-y-1">
+        <nav className="mb-2 space-y-1">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -162,8 +162,7 @@ export default function Sidebar() {
           <hr className="text-[#e8e5ec] dark:text-gray-700 mb-2" />
         </nav>
 
-        {/* Favorites */}
-        <div className="mb-2 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-1 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
           <MdKeyboardArrowDown />
           {!collapsed && <span>Favorites</span>}
         </div>
@@ -200,9 +199,9 @@ export default function Sidebar() {
       </div>
 
       {/* Footer */}
-      <div className="py-2">
+      <div className="py-1">
         {collapsed ? (
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-2">
             <Image
               src="/photo.png"
               alt="User Avatar"
