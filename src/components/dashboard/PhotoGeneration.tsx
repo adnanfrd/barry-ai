@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { HiOutlineLink } from "react-icons/hi";
 import { PiStar, PiArrowsClockwise, PiEyeSlash } from "react-icons/pi";
 import { FiDownloadCloud, FiThumbsDown, FiThumbsUp } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";

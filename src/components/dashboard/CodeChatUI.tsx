@@ -90,7 +90,7 @@ export default function CodeChatUI() {
       <div className="flex justify-between items-center px-4 py-2 bg-zinc-800 rounded-md">
         {/* Tab List */}
         <TabList className="flex gap-2">
-          {tabs.map((tab, index) => (
+          {tabs.map((tab) => (
             <Tab key={tab}>
               {({ selected }) => (
                 <span
