@@ -1,27 +1,19 @@
 import ChatSidebar from '@/components/dashboard/ChatSidebar'
 import EducationSciencePage from '@/components/dashboard/EducationSciencePage'
-import Header from '@/components/dashboard/Header'
-import PromptInput from '@/components/subcomponents/PromptInput'
 import React from 'react'
 
 const page = () => { 
   return (
-    <div className="flex ">
-     <div className="flex flex-col flex-1 px-3">
-       <Header />
-       
-       <div className="flex flex-col flex-1 ">
-         <div className="flex-1  ">
-           <EducationSciencePage/>
-         </div >
-         <PromptInput/>
+   <div className="flex">
+         <div className="flex flex-col flex-1  ">
+           <div className=" pr-3">
+             <EducationSciencePage />
+           </div>
+         </div>
+         <div>
+           <ChatSidebar />
+         </div>
        </div>
-     </div>
-   
-     <div >
-       <ChatSidebar />
-     </div>
-   </div>
   )
 }
 
