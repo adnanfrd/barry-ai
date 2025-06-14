@@ -1,7 +1,6 @@
 "use client";
 import { FiThumbsDown, FiThumbsUp, FiDownloadCloud } from "react-icons/fi";
 import Image from "next/image";
-import { HiOutlineLink } from "react-icons/hi";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { FaCheckCircle, FaStar } from "react-icons/fa";
 import { LuCopy } from "react-icons/lu";
@@ -16,7 +15,7 @@ export default function EducationSciencePage() {
       </div>
       <div className="flex-1 overflow-y-auto p-4 space-y-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         <div className="flex justify-end">
-          <div className="max-w-[90%] md:max-w-[75%] flex border border-gray-200 dark:border-gray-700 rounded-xl">
+          <div className="max-w-[80%] md:max-w-[80%] w-[80%] flex border border-gray-200 dark:border-gray-700 rounded-xl">
             <div className="bg-white dark:bg-[#2A2A2A] rounded-2xl flex-1 p-4 text-sm text-gray-700 dark:text-gray-300">
               <div className="flex gap-3 mb-2">
                 {[1, 2].map((_, i) => (
@@ -60,24 +59,37 @@ export default function EducationSciencePage() {
           </div>
         </div>
 
-        <div className="mt-3 w-[80%] flex items-center justify-between bg-gray-100 dark:bg-gray-800 rounded-2xl px-4 py-2">
+        <div className="mt-3 mb-6 w-[80%] flex items-center justify-between bg-gray-100 dark:bg-[#302d35] rounded-2xl px-4 py-2">
           <div className="w-10 h-10 rounded-full bg-[#524E63] flex items-center justify-center">
-            <HiOutlineLink className="w-5 h-5 text-white" />
+            <Image
+              src="/Vector.png"
+              alt="icon"
+              width={40}
+              height={40}
+              className="w-5 h-5 text-[#4B4B4B] dark:text-gray-300"
+            />
           </div>
           <div className="flex items-center gap-2 ml-4">
-            <span className="w-2 h-2 rounded-full bg-black dark:bg-white"></span>
-            <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-            <span className="w-2 h-2 rounded-full bg-gray-300"></span>
+            <span className="w-2 h-2 rounded-sm bg-gray-400 dark:bg-gray-500 animate-dot-1 dark:animate-dot-1-dark" />
+            <span className="w-2 h-2 rounded-sm bg-gray-400 dark:bg-gray-500 animate-dot-2 dark:animate-dot-2-dark" />
+            <span className="w-2 h-2 rounded-sm bg-gray-400 dark:bg-gray-500 animate-dot-3 dark:animate-dot-3-dark" />
           </div>
           <div className="ml-auto text-xs text-gray-600 dark:text-gray-300">
             00
           </div>
         </div>
-
-        <div className="flex min-h-screen bg-[#F9F8FC] dark:bg-[#121212] p-6 rounded-2xl">
+        <div className="flex w-full min-h-screen bg-[#F9F8FC] dark:bg-[#121212] p-6 rounded-2xl">
           <div className="w-14 flex flex-col items-center bg-[#edebf1] dark:bg-[#2A2A2A] rounded-2xl py-4 gap-6">
             <div className="bg-[#EBE9F7] dark:bg-[#3B3B3B] p-2 rounded-xl">
-              <HiOutlineLink className="w-5 h-5 text-[#4B4B4B] dark:text-white" />
+              <div className="bg-[#524E63] text-#4B4B4B dark:bg-[#3c384a] p-2 rounded-xl">
+                <Image
+                  src="/Vector.png"
+                  alt="icon"
+                  width={40}
+                  height={40}
+                  className="w-5 h-5 text-[#4B4B4B] dark:text-gray-300"
+                />
+              </div>{" "}
             </div>
             <div className="text-[10px] text-gray-400 font-medium">12:22</div>
             <hr className="text-gray-700 dark:text-gray-500" />
@@ -92,7 +104,7 @@ export default function EducationSciencePage() {
           <div className="flex-1 ml-6">
             <div className="bg-[#F1EEF9] dark:bg-[#1E1E2F] p-4 rounded-2xl flex justify-between items-start">
               <div className="flex items-center gap-3">
-                <div className="bg-[#EBE9F7] dark:bg-[#3B3B3B] p-2 rounded-xl">
+                <div className="bg-[#c07e2d62] dark:bg-[#3B3B3B] p-2 rounded-xl">
                   <FaStar className="text-[#C07F2D] w-4 h-4" />
                 </div>
                 <div>
